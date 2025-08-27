@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TestPartnersCard = ({ name, image, extraInfo, onClick }) => {
+const PageCard = ({ name, image, extraInfo, onClick }) => {
   return (
     <div
       className="flex flex-col bg-white shadow-md rounded-2xl hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
@@ -33,4 +33,4 @@ TestPartnersCard.defaultProps = {
   onClick: () => {},
 };
 
-export default TestPartnersCard;
+export default PageCard;

@@ -1,21 +1,62 @@
-import React from "react";
-import TestPartnersCard from "../test/TestPartnersCard";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../common/SectionTitle";
-import { partnersData } from "../../data/Data";
+import TestPartnersCard from "./TestPartnersCard";
+import SampleImage from "../../assets/logos/esitisyeri-kalp-logo.png";
+import { getPartners } from "../../api/partners";
 
 const TestPartnersSection = () => {
+  const [partners, setPartners] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getPartners(1, 5);
+        setPartners(data);
+      } catch (err) {
+        console.error("Veri çekilemedi:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p className="text-center">Yükleniyor...</p>;
+  if (!partners.length) return <p className="text-center">Veri bulunamadı.</p>;
+
   return (
     <section className="py-12">
       <SectionTitle>Eşit İşyerleri</SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        {partnersData.map((partner) => (
-          <TestPartnersCard
-            key={partner.id}
-            title={partner.title}
-            video={partner.video}
-            onClick={() => console.log(partner.title + " tıklandı")}
-          />
-        ))}
+        {partners.map((partner, index) => {
+          const cells = partner.Cells || [];
+          const name = cells[2]?.DisplayText || "İsim yok";
+          const yetkili = cells[3]?.DisplayText || "Yetkili yok";
+          const faaliyet = cells[4]?.DisplayText || "Faaliyet türü yok";
+
+          let image = SampleImage;
+          try {
+            const filesJson = cells[16]?.Value || "[]";
+            const files = JSON.parse(filesJson);
+            if (Array.isArray(files) && files.length > 0) {
+              image = files[0].src || SampleImage;
+            }
+          } catch (err) {
+            console.warn("Resim verisi okunamadı:", err);
+          }
+
+          return (
+            <TestPartnersCard
+              key={index}
+              name={name}
+              image={image}
+              extraInfo={`Yetkili: ${yetkili} | Tür: ${faaliyet}`}
+              onClick={() => console.log(`${name} tıklandı`)}
+            />
+          );
+        })}
       </div>
     </section>
   );
