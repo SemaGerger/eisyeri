@@ -1,5 +1,7 @@
 import React from "react";
 import PartnersSection from './PartnersSection';
+import PressSection from "./PressSection";
+
 
 
 const Main = () => {
@@ -11,7 +13,7 @@ const Main = () => {
       </section>
       {/* Haberler*/}
       <section className="mb-20">
-       
+        <PressSection />
       </section>
       <section className="mb-20">
        

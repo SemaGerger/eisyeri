@@ -1,27 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../common/SectionTitle";
 import TestPartnersCard from "./TestPartnersCard";
 import SampleImage from "../../assets/logos/esitisyeri-kalp-logo.png";
-import { getPartners } from "../../api/partners";
+import { usePartners } from "../../hooks/usePartners";
 
 const TestPartnersSection = () => {
-  const [partners, setPartners] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getPartners(1, 5);
-        setPartners(data);
-      } catch (err) {
-        console.error("Veri çekilemedi:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { partners, loading } = usePartners(1, 5);
 
   if (loading) return <p className="text-center">Yükleniyor...</p>;
   if (!partners.length) return <p className="text-center">Veri bulunamadı.</p>;

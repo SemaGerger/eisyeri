@@ -1,11 +1,35 @@
-
 import React from "react";
 
-const SectionCard = ({ title, description }) => {
+const SectionCard = ({ name, image, video, extraInfo, onClick, className = "" }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:scale-105 transform transition duration-500">
-      <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div
+      className={`bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transition ${className}`}
+      onClick={onClick}
+    >
+      {video ? (
+        <video
+          src={video}
+          className="w-full h-48 object-cover"
+          controls
+          muted
+          playsInline
+        />
+      ) : image ? (
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-48 object-cover"
+        />
+      ) : (
+        <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+          Video/Resim Yok
+        </div>
+      )}
+
+      <div className="p-4">
+        <h3 className="font-semibold text-lg">{name}</h3>
+        {extraInfo && <p className="text-gray-600 text-sm mt-1">{extraInfo}</p>}
+      </div>
     </div>
   );
 };
