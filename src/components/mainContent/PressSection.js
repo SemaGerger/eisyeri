@@ -1,20 +1,45 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import SectionCard from "../common/SectionCard";
 import SectionTitle from "../common/SectionTitle";
 import { pressData } from "../../data/DefaultData";
 
 const PressSection = () => {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div>
+    <div
+      ref={sectionRef}
+      className={`transition-all duration-700 ease-out transform ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+      }`}
+    >
       <SectionTitle>Basında Biz</SectionTitle>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+      <div className="flex overflow-x-auto space-x-6 py-4 snap-x snap-mandatory scrollbar-hide">
         {pressData.map((item) => (
-          <SectionCard
+          <div
             key={item.id}
-            name={item.title}
-            video={item.video}
-            extraInfo={item.extraInfo}
-          />
+            className="flex-shrink-0 w-64 snap-start hover:scale-105 transform transition duration-300"
+          >
+            <SectionCard
+              name={item.title}
+              video={item.video}
+              extraInfo={item.extraInfo}
+            />
+          </div>
         ))}
       </div>
     </div>

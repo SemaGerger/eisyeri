@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-
 const TestPartnersCard = ({ name, image, extraInfo, onClick }) => {
   return (
     <div className="flex flex-col bg-white shadow-md rounded-2xl hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">

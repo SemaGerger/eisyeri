@@ -1,7 +1,7 @@
 import React from "react";
 import StoryCard from "../common/StoryCard";
 import SectionTitle from "../common/SectionTitle";
-import { usePartners } from "../../hooks/usePartners"; // hook'un yolu doğru olmalı
+import { usePartners } from "../../hooks/usePartners";
 
 const PartnersSection = () => {
 
