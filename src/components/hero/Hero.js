@@ -1,12 +1,12 @@
 import React from "react";
 import CTAButton from "../common/CTAButton";
 import videoBg from "../../assets/videos/esitIsyeriVideo.mp4";
-import ModalForm from "../common/ModalForm";
-import { useState } from "react";
+
+
 
 
 const Hero = () => {
-  const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
       {/* Video arkası */}
@@ -29,12 +29,10 @@ const Hero = () => {
         <p className="text-lg md:text-2xl mb-8 drop-shadow-md">
           Büyükçekmece Belediyesi Ruhsat ve Denetim Müdürlüğü
         </p>
-    <div>
-      {/* CTA Button */}
-      <CTAButton onClick={() => setShowForm(true)} />
 
-      {/* Modal Form */}
-      <ModalForm show={showForm} onClose={() => setShowForm(false)} />
+      {/* CTA Button */}
+     <div className="flex justify-center mt-10">
+      <CTAButton />
     </div>
       </div>
     </section>
