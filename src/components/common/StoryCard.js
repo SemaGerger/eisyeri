@@ -2,14 +2,14 @@ import React from "react";
 
 const StoryCard = ({ data }) => {
   return (
-    <div className="flex space-x-6 overflow-x-auto p-6 shadow-lg">
+    <div className="flex space-x-6 overflow-x-auto p-6">
       {data.map((item, index) => (
         <div
-          key={item.id || item.slug || index} // ✅ fallback ile garanti
-          className="flex flex-col items-center"
+          key={item.id || item.slug || index} // fallback ile
+          className="flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1"
         >
           {/* story image */}
-          <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg flex-shrink-0">
+          <div className="w-28 h-28 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-blue-500 shadow-lg flex-shrink-0">
             {item.image ? (
               <img
                 src={item.image}
