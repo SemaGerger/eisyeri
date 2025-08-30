@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import logo from '../../assets/logos/esitisyeri-kalp-logo.png';
-import logoYazisi from '../../assets/logos/esitisyeri-yazisi-logo.png';
-import Search from "./Search";
-import Navbar from "../header/Navbar";
+import logo from '../../../assets/logos/esitisyeri-kalp-logo.png';
+import logoYazisi from '../../../assets/logos/esitisyeri-yazisi-logo.png';
+import Search from "../../../components/mainContent/header/Search";
+import Navbar from "../../../components/mainContent/header/Navbar";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

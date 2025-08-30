@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitle from "../common/SectionTitle";
-import { usePartners } from "../../hooks/usePartners";
+import SectionTitle from "../common/cardTitleButton/SectionTitle";
+import { usePartners } from "../common/hooks/usePartners";
 import TestPartnersList from "./TestPartnersList";
 
 const TestPartnersSection = () => {

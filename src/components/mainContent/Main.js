@@ -1,6 +1,6 @@
 import React from "react";
-import PartnersSection from './PartnersSection';
-import PressSection from "./PressSection";
+import PartnersSection from './main/partners/PartnersSection';
+import PressSection from "./main/press/PressSection";
 
 
 const Main = () => {

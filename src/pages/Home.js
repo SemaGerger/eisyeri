@@ -1,20 +1,18 @@
 import React from "react";
-import Header from "../components/header/Header";
-import Hero from '../components/hero/Hero';
+
+import Layout from "../components/mainContent/header/Layout";
+import Hero from '../components/mainContent/hero/Hero';
 import Main from "../components/mainContent/Main";
-import Footer from "../components/footer/Footer";
+
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-900 bg-gray-50">
-      <Header />
-      {/* sabit header */}
-      <div className="">
+    <Layout>
+   
         <Hero />
-        <Main />
-        <Footer />
-      </div>
-    </div>
+        <Main />  
+    
+    </Layout>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import TestPartnersSection from "../../components/test/TestPartnersSection";
-import Layout from "../../components/layout/Layout";
+import Layout from "../../components/mainContent/header/Layout";
 
 const PartnersPage = () => {
   return (

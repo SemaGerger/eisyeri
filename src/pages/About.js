@@ -1,6 +1,6 @@
 import React from "react";
-import { aboutData } from "../data/DefaultData";
-import Layout from "../components/layout/Layout";
+import { aboutData } from "../api/DefaultData";
+import Layout from "../components/mainContent/header/Layout";
 
 const About = () => {
   return (

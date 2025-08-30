@@ -1,6 +1,7 @@
 import React from "react";
-import CTAButton from "../common/CTAButton";
-import videoBg from "../../assets/videos/esitIsyeriVideo.mp4";
+import CTAButton from "../../../components/common/cardTitleButton/CTAButton";
+import videoBg from "../../../assets/videos/esitIsyeriVideo.mp4";
+
 
 
 
@@ -31,11 +32,15 @@ const Hero = () => {
         </p>
 
       {/* CTA Button */}
-     <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10">
       <CTAButton />
-    </div>
       </div>
+
+ </div>
+      
     </section>
+
+
   );
 };
 

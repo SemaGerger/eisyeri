@@ -1,7 +1,7 @@
 import React from "react";
-import StoryCard from "../common/StoryCard";
-import SectionTitle from "../common/SectionTitle";
-import { usePartners } from "../../hooks/usePartners";
+import { usePartners } from "../../../common/hooks/usePartners";
+import SectionTitle from "../../../common/cardTitleButton/SectionTitle";
+import StoryCard from "../../../common/cardTitleButton/StoryCard";
 
 const PartnersSection = () => {
 

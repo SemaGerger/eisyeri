@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import SectionCard from "../common/SectionCard";
-import SectionTitle from "../common/SectionTitle";
-import { pressData } from "../../data/DefaultData";
+
+import { pressData } from "../../../../api/DefaultData";
+import SectionTitle from "../../../common/cardTitleButton/SectionTitle";
+import SectionCard from "../../../common/cardTitleButton/SectionCard";
+
 
 const PressSection = () => {
   const sectionRef = useRef(null);

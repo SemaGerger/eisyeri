@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import Layout from "../components/mainContent/header/Layout";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +23,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <Layout>
+    <div className="max-w-6xl mx-auto px-4 py-12 mt-12">
       <h1 className="text-4xl font-bold text-center mb-12 text-blue-700">
         Bize Ulaşın
       </h1>
@@ -95,6 +98,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+     </Layout>
   );
 };
 

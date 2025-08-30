@@ -1,4 +1,3 @@
-// components/common/CTAButton.jsx
 const CTAButton = () => {
   return (
     <a

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getPartners } from "../api/partnersApi";
-import { partnersData } from "../data/DefaultData";
+import { getPartners } from "../../../api/partnersApi";
+import { partnersData } from "../../../api/DefaultData";
 
 export const usePartners = (page = 1, limit = 5) => {
   const [partners, setPartners] = useState([]);
