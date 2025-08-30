@@ -24,7 +24,7 @@ const Hero = () => {
       {/* video ortası */}
       <div className="relative z-10 text-center px-4 md:px-0 animate-fadeIn">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-          Destek <span className="text-yellow-400">Esit İsyeri</span>
+          %50 Destek <span className="text-yellow-400">Esit İsyeri</span>
         </h1>
         <p className="text-lg md:text-2xl mb-8 drop-shadow-md">
           Büyükçekmece Belediyesi Ruhsat ve Denetim Müdürlüğü

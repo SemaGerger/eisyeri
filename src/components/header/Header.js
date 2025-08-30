@@ -20,13 +20,13 @@ const Header = () => {
         </a>
       </div>
 
-      {/* Desktop Menu */}
+      {/* Desktop */}
       <div className="hidden md:flex items-center space-x-6">
         <Navbar />
         <Search />
       </div>
 
-      {/* Mobile Hamburger */}
+      {/* Hamburger */}
       <div className="md:hidden flex items-center">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -44,7 +44,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md px-6 py-4 flex flex-col items-start md:hidden">
           <Navbar isMobile={true} onClickLink={() => setIsMobileMenuOpen(false)} />

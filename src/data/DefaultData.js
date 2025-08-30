@@ -6,12 +6,17 @@ import HalkTvNisan2023 from "../assets/videos/press/HalkTv2.mp4";
 import Krt from "../assets/videos/press/KRT.mp4";
 import Tele1 from "../assets/videos/press/Tele1.mp4";
 import Tv5 from "../assets/videos/press/Tv5.mp4";
+
 import foto1 from "../assets/images/partners/1.jpeg";
 import foto2 from "../assets/images/partners/2.jpg";
 import foto3 from "../assets/images/partners/3.jpg";
 import foto4 from "../assets/images/partners/4.jpg";
 import foto5 from "../assets/images/partners/5.jpg";
 import foto6 from "../assets/images/partners/6.jpg";
+
+import Image1 from "../assets/images/about/Image1.jpg";
+import Image2 from "../assets/images/about/Image2.jpg";
+import Image3 from "../assets/images/about/Image3.jpg";
 
 
 export const partnersData = [
@@ -45,4 +50,26 @@ export const pressData = [
   { id: 5, title: "KRT", video: Krt},
   { id: 6, title: "Tele1", video: Tele1},
   { id: 7, title: "TV5", video: Tv5},
+];
+
+export const aboutData = [
+  {
+    title: "Eşit İşyeri Nedir?",
+    text: "Büyükçekmece Belediyesi olarak; Toplumsal cinsiyet eşitliği ile ilgili farkındalık yaratmak, kadın girişimcilerin sayısını artırmak, kadınların toplumda çağdaş ve güçlü bireyler olarak yer almalarını sağlamak amacıyla Eşit İşyeri Projesi başlatılmıştır.",
+    image: Image1,
+  },
+  {
+    title: "Neden Almalıyım?",
+    text: "İşyerinize ait ruhsat ücretlerinde %50 oranında indirim sağlanacaktır. İşyerinize ait ilan ve reklam ücretlerinde %50 oranında indirim sağlanacaktır.",
+    image: Image2,
+  },
+  {
+    title: "Başvuru Şartları",
+    text: `- İşyerinde çalışanların %50'sinin ya da daha fazlasının kadın olması
+- İşyerinde eşit işi yapan kadın ve erkek çalışanların eşit ücret alması
+- İşyerinde işverenler haricinde en az 2 çalışan olması
+- Kadınlara mahsus hizmet veren iş yerleri bu proje kapsamı dışındadır. Bu işyerlerinin tespiti Eşit İşyeri Komisyonu tarafından değerlendirilecektir.
+- Eşit İşyeri Belgesini alan işyerleri yukarıdaki şartları koruması gerekmektedir. Aksi taktirde Eşit İşyeri Belgesi ve bu proje kapsamında faydalandığı avantajlar Eşit İşyeri Komisyonunca iptal edilecektir.`,
+    image: Image3,
+  },
 ];

@@ -3,7 +3,6 @@ import PartnersSection from './PartnersSection';
 import PressSection from "./PressSection";
 
 
-
 const Main = () => {
   return (
     <main className="py-20 px-6 md:px-20 bg-white-50">
@@ -11,6 +10,7 @@ const Main = () => {
        <section className="mb-20">
         <PartnersSection />
       </section>
+   
       {/* Haberler*/}
       <section className="mb-20">
         <PressSection />
