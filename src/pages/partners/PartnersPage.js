@@ -1,13 +1,17 @@
 import React from "react";
-import TestPartnersSection from "../../components/test/TestPartnersSection";
+
 import Layout from "../../components/mainContent/header/Layout";
+import PartnersList from "../../components/mainContent/main/partners/PartnersList";
+import SectionTitle from "../../components/common/cardTitleButton/SectionTitle";
+
 
 const PartnersPage = () => {
   return (
     <Layout>
-      <div className="py-6 px-6 mt-6 text-center">
-        <TestPartnersSection />
-      </div>
+     <section className="py-12">
+      <SectionTitle>Eşit İşyerleri</SectionTitle>
+      <PartnersList partners={partners} />
+    </section>
     </Layout>
   );
 };

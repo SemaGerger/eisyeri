@@ -31,15 +31,16 @@ const Contact = () => {
 
       {/* Map */}
       <div className="mb-12">
-        <iframe
-          title="Büyükçekmece Belediyesi"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.123456789!2d28.656!3d41.012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzAwLjAiTiAyOMKwMzknMDAuMCJF!5e0!3m2!1str!2str!4v1234567890"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
+<iframe
+  src="https://maps.google.com/maps?q=41.02115252472539,28.5852208036723&hl=tr&z=16&output=embed"
+  width="100%"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+/>
+
+
       </div>
 
       {/* İletişim Bilgileri */}
