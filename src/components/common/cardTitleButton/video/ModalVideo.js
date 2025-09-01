@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { safePlay, safePause } from "../cardTitleButton/videoControl";
+import { safePlay, safePause } from "../../cardTitleButton/video/videoControl";
 
 const ModalVideo = ({ src, onClose }) => {
   const videoRef = useRef(null);

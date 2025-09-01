@@ -3,7 +3,7 @@ import Layout from "../mainContent/header/Layout";
 import { usePartners } from "../common/hooks/usePartners";
 import TestPartnersList from "./TestPartnersList";
 
-const TestPage = () => {
+const TestPageContainer = () => {
   const { partners, loading } = usePartners(1, 20);
 
   return (
@@ -16,12 +16,11 @@ const TestPage = () => {
           <p className="text-center">Veri bulunamadı.</p>
         )}
 
-        {!loading && partners.length > 0 && (
-          <TestPartnersList partners={partners} />
-        )}
+        {!loading && partners.length > 0 && <TestPartnersList partners={partners} />}
       </div>
     </Layout>
   );
 };
 
-export default TestPage;
+export default TestPageContainer;
+    

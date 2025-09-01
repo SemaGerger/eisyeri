@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import SectionTitle from "../common/cardTitleButton/SectionTitle";
 import { usePartners } from "../common/hooks/usePartners";
 import TestPartnersList from "./TestPartnersList";
@@ -17,4 +17,4 @@ const TestPartnersSection = () => {
   );
 };
 
-export default TestPartnersSection;
+export default TestPartnersSection;*/

@@ -1,10 +1,9 @@
 import React from "react";
 import { usePartners } from "../../../common/hooks/usePartners";
-import SectionTitle from "../../../common/cardTitleButton/SectionTitle";
-import StoryCard from "../../../common/cardTitleButton/StoryCard";
+import SectionTitle from "../../../common/cardTitleButton/section/SectionTitle";
+import StoryCardContainer from "../../../common/cardTitleButton/section/StoryCards/StoryCardContainer";
 
 const PartnersSection = () => {
-
   const { partners, loading } = usePartners(1, 10); 
 
   if (loading) {
@@ -12,10 +11,10 @@ const PartnersSection = () => {
   }
 
   return (
-    <div>
+    <section className="my-10">
       <SectionTitle>Eşit İşyerleri</SectionTitle>
-      <StoryCard data={partners} />
-    </div>
+      <StoryCardContainer data={partners} />
+    </section>
   );
 };
 

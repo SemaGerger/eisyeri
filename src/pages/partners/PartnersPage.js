@@ -1,17 +1,27 @@
 import React from "react";
-
 import Layout from "../../components/mainContent/header/Layout";
-import PartnersList from "../../components/mainContent/main/partners/PartnersList";
-import SectionTitle from "../../components/common/cardTitleButton/SectionTitle";
-
+import PartnersList from "../../components/mainContent/main/partners/PartnersList"
+import { usePartners } from "../../components/common/hooks/usePartners";
+import SectionTitle from "../../components/common/cardTitleButton/section/SectionTitle";
 
 const PartnersPage = () => {
+  const {partners, loading } = usePartners(1, 20);
+
   return (
     <Layout>
-     <section className="py-12">
-      <SectionTitle>Eşit İşyerleri</SectionTitle>
-      <PartnersList partners={partners} />
-    </section>
+      <div className="py-12 px-6 mt-8">
+          <SectionTitle>Eşit İşyerleri</SectionTitle>
+
+        {loading && <p className="text-center">Yükleniyor...</p>}
+        {!loading && !partners.length && (
+          <p className="text-center">Veri bulunamadı.</p>
+        )}
+
+        {!loading && partners.length > 0 && (
+        
+          <PartnersList partners={partners} />
+        )}
+      </div>
     </Layout>
   );
 };

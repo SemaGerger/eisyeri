@@ -1,9 +1,8 @@
 import React from "react";
-
+import PageCard from "../../../common/cardTitleButton/pageCards/PageCard";
 import SampleImage from "../../../../assets/logos/esitisyeri-kalp-logo.png";
-import PageCard from "../../../common/cardTitleButton/PageCard";
 
-const PartnersList = ({ partners }) => {
+const TestPartnersList = ({ partners }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
       {partners.map((partner, index) => {
@@ -37,4 +36,4 @@ const PartnersList = ({ partners }) => {
   );
 };
 
-export default PartnersList;
+export default TestPartnersList;

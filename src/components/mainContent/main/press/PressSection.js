@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import { pressData } from "../../../../api/DefaultData";
-import SectionTitle from "../../../common/cardTitleButton/SectionTitle";
-import SectionCard from "../../../common/cardTitleButton/SectionCard";
-import MiniPreviewVideo from "../../../common/cardTitleButton/MiniPreviewVideo";
-import ModalVideo from "../../../common/cardTitleButton/ModalVideo";
+import SectionTitle from "../../../common/cardTitleButton/section/SectionTitle";
+import SectionCard from "../../../common/cardTitleButton/section/SectionCard";
+import MiniPreviewVideo from "../../../common/cardTitleButton/video/MiniPreviewVideo";
+import ModalVideo from "../../../common/cardTitleButton/video/ModalVideo";
 
 const PressSection = () => {
   const sectionRef = useRef(null);

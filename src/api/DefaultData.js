@@ -18,6 +18,10 @@ import Image1 from "../assets/images/about/Image1.jpg";
 import Image2 from "../assets/images/about/Image2.jpg";
 import Image3 from "../assets/images/about/Image3.jpg";
 
+import president from "../assets/images/HasanAkgun.png";
+
+import logomuz from "../assets/logos/esitIsyeriLogo.png";
+import tescil from "../assets/images/tescil.png";
 
 export const partnersData = [
   { id: 1, title: "ERSE MANTIEVİ EV YEMEKLERİ GIDA SANAYİ VE TİCARET LİMİTED ŞİRKETİ", image: foto1 },
@@ -43,13 +47,13 @@ export const servicesData = [
 ];
 
 export const pressData = [
-  { id: 1, title: "basindabiz", video: basindabiz},
-  { id: 2, title: "FlashTV", video: FlashTV},
-  { id: 3, title: "HalkTV", video: HalkTV},
-  { id: 4, title: "HalkTVNisan2023", video: HalkTvNisan2023},
-  { id: 5, title: "KRT", video: Krt},
-  { id: 6, title: "Tele1", video: Tele1},
-  { id: 7, title: "TV5", video: Tv5},
+  { id: 1, title: "Now", video: basindabiz},
+  { id: 2, title: "KRT", video: Krt},
+  { id: 3, title: "Tele1", video: Tele1},
+  { id: 4, title: "Halk TV", video: HalkTvNisan2023},
+  { id: 5, title: "TV5", video: Tv5},
+  { id: 6, title: "Halk TV 2", video: HalkTV},
+  { id: 7, title: "FlashTV", video: FlashTV},
 ];
 
 export const aboutData = [
@@ -72,4 +76,16 @@ export const aboutData = [
 - Eşit İşyeri Belgesini alan işyerleri yukarıdaki şartları koruması gerekmektedir. Aksi taktirde Eşit İşyeri Belgesi ve bu proje kapsamında faydalandığı avantajlar Eşit İşyeri Komisyonunca iptal edilecektir.`,
     image: Image3,
   },
+];
+
+export const abaoutPresident = [
+  { id: 1, title: "BAŞKANIN MESAJI", 
+    text: "Eşit İşyeri projemizin amacı, şehrimiz genelinde toplumsal cinsiyet eşitliği ile ilgili farkındalık yaratmak, kadın girişimcilerin sayısını arttırmak, kadınların çalışma hayatatında çağdaş ve güçlü bireyler olarak üretimden yönetime kadar her alanda görev almalarını desteklemek ve toplumsal yaşamın her alanında ve işyerlerinde kadın-erkek eşitliğinin sağlanması konusunda önem vermek ve bu dengeyi gözetmektir.",
+    image: president, 
+  },
+];
+
+export const logo = [
+  { id: 1, title: "Logomuz", image: logomuz },
+  { id: 2, title: "Marka Tescil Belgesi", image: tescil },
 ];

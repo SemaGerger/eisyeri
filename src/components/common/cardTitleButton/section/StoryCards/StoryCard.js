@@ -36,9 +36,9 @@ const StoryCard = ({ data }) => {
           scrollContainer.scrollLeft + scrollContainer.clientWidth >=
           scrollContainer.scrollWidth
         ) {
-          direction = -1; // sola dön
+          direction = -1; // Sola
         } else if (scrollContainer.scrollLeft <= 0) {
-          direction = 1; // sağa dön
+          direction = 1; // Sağa
         }
       }
     }, 30); // hız ayarı (ms)
@@ -60,7 +60,7 @@ const StoryCard = ({ data }) => {
           key={item.id || item.slug || index}
           className="flex flex-col items-center transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1"
         >
-          {/* story image */}
+          {/* Image */}
           <div className="w-28 h-28 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-blue-500 shadow-lg flex-shrink-0">
             {item.image ? (
               <img
@@ -75,7 +75,7 @@ const StoryCard = ({ data }) => {
             )}
           </div>
 
-          {/* başlık */}
+          {/* title */}
           <p className="mt-2 text-sm md:text-base text-center text-gray-700 truncate w-28 md:w-32">
             {item.title}
           </p>

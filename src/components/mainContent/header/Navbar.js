@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 const Navbar = ({ isMobile = false, onClickLink }) => {
   const links = [
     { name: "AnaSayfa", to: "/" },
+    { name: "Başkan Hakkında", to: "/aboutPresident" },
     { name: "Eşit İşyerleri", to: "/esitisyerleri" },
     { name: "Hakkımızda", to: "/about" },
     { name: "Bize Ulaşın", to: "/contact" },
     { name: "Logomuz", to: "/logomuz" },
-    { name: "Test", to: "/test" },
+   
+  
   ];
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { safePlay, safePause } from "../../../components/common/cardTitleButton/videoControl";
+import { safePlay, safePause } from "./videoControl";
 
 const MiniPreviewVideo = ({ src, previewTime = 5000 }) => {
   const videoRef = useRef(null);
