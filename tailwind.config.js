@@ -14,6 +14,7 @@ module.exports = {
           '10%, 30%': { transform: 'scale(1.3)' },
           '20%': { transform: 'scale(1.15)' },
         },
+        
     
       },
     },

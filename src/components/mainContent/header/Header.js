@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import logo from '../../../assets/logos/esitisyeri-kalp-logo.png';
 import logoYazisi from '../../../assets/logos/esitisyeri-yazisi-logo.png';
-import Search from "../../../components/mainContent/header/Search";
+import belediye from '../../../assets/logos/bcekmecebldlogo.png';
+import CTAButton from '../../common/cardTitleButton/CTAButton';
+
 import Navbar from "../../../components/mainContent/header/Navbar";
 
 const Header = () => {
@@ -23,8 +25,11 @@ const Header = () => {
       {/* Desktop */}
       <div className="hidden md:flex items-center space-x-6">
         <Navbar />
-        <Search />
-      </div>
+
+        <a href="/home" className="flex items-center space-x-2">
+          <img src={belediye} alt="Büyükçekmece Belediyesi" className="h-12"/>
+        </a>
+      </div> 
 
       {/* Hamburger */}
       <div className="md:hidden flex items-center">
@@ -44,12 +49,21 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md px-6 py-4 flex flex-col items-start md:hidden">
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-6 flex flex-col items-start space-y-4 md:hidden animate-fadeIn">
+          {/* Mobil Navbar */}
           <Navbar isMobile={true} onClickLink={() => setIsMobileMenuOpen(false)} />
-          <div className="mt-2 w-full">
-            <Search />
+
+          {/* Divider */}
+          <div className="w-full h-px bg-gray-200"></div>
+
+          {/* CTA Button */}
+          <CTAButton className= ""/>
+       
+          {/* Belediye Logo */}
+          <div className="flex justify-center w-full pt-4 border-t border-gray-100">
+            <img src={belediye} alt="Büyükçekmece Belediyesi" className="h-12" />
           </div>
         </div>
       )}

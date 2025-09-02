@@ -10,15 +10,7 @@ const AboutPresident = () => {
         <div
           key={item.id}
           className="grid md:grid-cols-2 gap-8 bg-white rounded-2xl shadow-2xl overflow-hidden max-w-4xl w-full"        >
-          {/* Image */}
-          <div className="relative">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0" />
-          </div>
+         
 
           {/* Text */}
           <div className="flex flex-col justify-center  bg-gray-100 p-10">
@@ -26,6 +18,15 @@ const AboutPresident = () => {
               {item.title}
             </h2>
             <p className="text-lg text-gray-600">{item.text}</p>
+          </div>
+           {/* Image */}
+          <div className="relative">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0" />
           </div>
         </div>
       ))}

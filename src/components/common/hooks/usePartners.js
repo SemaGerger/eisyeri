@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getPartners } from "../../../api/partnersApi";
-import { partnersData } from "../../../api/DefaultData";
 
 export const usePartners = (page = 1, limit = 5) => {
   const [partners, setPartners] = useState([]);
@@ -8,22 +7,24 @@ export const usePartners = (page = 1, limit = 5) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true); 
       try {
         const partnersDataApi = await getPartners(page, limit);
 
+        // sadece API’den gelen veriyi kullan, yoksa boş dizi
         if (partnersDataApi && partnersDataApi.length > 0) {
           setPartners(partnersDataApi);
         } else {
-          // fallback data
-          setPartners(partnersData.slice(0, limit));
+          setPartners([]); // veri yoksa boş dizi
         }
       } catch (err) {
-        console.error("Partner verisi çekilemedi, fallback data kullanılıyor:", err);
-        setPartners(partnersData.slice(0, limit)); // hata olursa da fallback data
+        console.error("Partner verisi çekilemedi:", err);
+        setPartners([]); // hata olursa da boş dizi
       } finally {
         setLoading(false);
       }
     };
+
     fetchData();
   }, [page, limit]);
 

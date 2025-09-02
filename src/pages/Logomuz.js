@@ -7,7 +7,7 @@ const LogomuzPage = () => {
     <Layout>
       <div className="py-12 px-6 mt-8">
         <h1 className="text-4xl font-bold text-center mb-12 text-blue-700">
-        Logomuz ve Belgemiz
+        Logomuz ve Marka Tescil Belgesi
       </h1>
         
         

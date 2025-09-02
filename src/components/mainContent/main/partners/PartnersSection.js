@@ -1,6 +1,7 @@
 import React from "react";
 import { usePartners } from "../../../common/hooks/usePartners";
 import SectionTitle from "../../../common/cardTitleButton/section/SectionTitle";
+
 import StoryCardContainer from "../../../common/cardTitleButton/section/StoryCards/StoryCardContainer";
 
 const PartnersSection = () => {
@@ -13,7 +14,7 @@ const PartnersSection = () => {
   return (
     <section className="my-10">
       <SectionTitle>Eşit İşyerleri</SectionTitle>
-      <StoryCardContainer data={partners} />
+      <StoryCardContainer partners={partners} />
     </section>
   );
 };

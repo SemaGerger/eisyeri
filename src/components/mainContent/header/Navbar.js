@@ -9,26 +9,28 @@ const Navbar = ({ isMobile = false, onClickLink }) => {
     { name: "Hakkımızda", to: "/about" },
     { name: "Bize Ulaşın", to: "/contact" },
     { name: "Logomuz", to: "/logomuz" },
-   
-  
   ];
 
   return (
-    <ul className={`flex ${isMobile ? "flex-col space-y-2" : "space-x-12"} items-center`}>
-  {links.map((link) => (
-    <li key={link.to} className="group">
-      <Link
-        to={link.to}
-        onClick={onClickLink}
-        className="relative text-gray font-medium whitespace-nowrap duration-300 hover:shadow-lg"
-      >
-        {link.name}
-  
-      </Link>
-    </li>
-  ))}
-</ul>
-
+    <ul
+      className={`flex ${
+        isMobile
+          ? "flex-col space-y-4 items-start pl-4" //mobil
+          : "flex-row space-x-10 items-center"   // desktop
+      }`}
+    >
+      {links.map((link) => (
+        <li key={link.to} className="group">
+          <Link
+            to={link.to}
+            onClick={onClickLink}
+            className="relative text-gray font-medium whitespace-nowrap duration-300 hover:shadow-lg"
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 };
 

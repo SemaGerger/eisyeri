@@ -1,60 +1,41 @@
-import React, { useRef, useEffect, useState } from "react";
-import StoryItem from "./StoryItem";
+import React from "react";
+import StoryCard from "../StoryCards/StoryCard";
+import SampleImage from "../../../../../assets/logos/esitisyeri-kalp-logo.png";
 
-const StoryCardContainer = ({ data }) => {
-  const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  // Mouse drag scroll
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleMouseLeave = () => setIsDragging(false);
-  const handleMouseUp = () => setIsDragging(false);
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX);
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Auto scroll
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    let direction = 1; 
-    const interval = setInterval(() => {
-      if (scrollContainer) {
-        scrollContainer.scrollLeft += 1 * direction;
-        if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
-          direction = -1;
-        } else if (scrollContainer.scrollLeft <= 0) {
-          direction = 1;
-        }
-      }
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, []);
-
+const StoryCardContainer = ({ partners }) => {
   return (
-    <div
-      ref={scrollRef}
-      className="flex space-x-6 overflow-x-auto p-6 cursor-grab select-none"
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-    >
-      {data.map((item, index) => (
-        <StoryItem key={item.id || item.slug || index} item={item} />
-      ))}
+    <div className="flex overflow-x-auto gap-4 py-4 px-2">
+      {partners.map((partner, index) => {
+        const cells = partner.Cells || [];
+        const name = cells[2]?.DisplayText || "İsim yok";
+        const yetkili = cells[3]?.DisplayText || "Yetkili yok";
+        const faaliyet = cells[4]?.DisplayText || "Faaliyet türü yok";
+
+        let image = SampleImage;
+        try {
+          const filesJson = cells[16]?.Value || "[]";
+          const files = JSON.parse(filesJson);
+          if (Array.isArray(files) && files.length > 0) {
+            image = files[0].src || SampleImage;
+          }
+        } catch (err) {
+          console.warn("Resim verisi okunamadı:", err);
+        }
+   // Partner ID’yi bul
+        const objectCell = cells.find(c => c.ColumnName === "vw_esit_isyeri.objectid");
+        const objectId = objectCell?.Value ? String(objectCell.Value) : null;
+
+        return (
+          <StoryCard
+          key={objectId || index}   // güvenli key
+            id={objectId} //id idi ama objectId olması gerekti
+
+            name={name}
+            image={image}  
+            extraInfo={`Yetkili: ${yetkili} | Tür: ${faaliyet}`}
+          />
+        );
+      })}
     </div>
   );
 };

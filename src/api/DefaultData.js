@@ -86,6 +86,6 @@ export const abaoutPresident = [
 ];
 
 export const logo = [
-  { id: 1, title: "Logomuz", image: logomuz },
-  { id: 2, title: "Marka Tescil Belgesi", image: tescil },
+  { id: 1, title: "", image: logomuz },
+  { id: 2, title: "", image: tescil },
 ];
