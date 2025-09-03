@@ -1,6 +1,6 @@
 import React from "react";
 import { abaoutPresident } from "../api/DefaultData";
-import Layout from "../components/mainContent/header/Layout";
+import Layout from "../layouts/Layout";
 
 const AboutPresident = () => {
   return (

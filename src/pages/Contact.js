@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import Layout from "../components/mainContent/header/Layout";
+import Layout from "../layouts/Layout";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

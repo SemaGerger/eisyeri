@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../mainContent/header/Layout";
-import { usePartners } from "../common/hooks/usePartners";
+import Layout from "../../layouts/Layout";
+import { usePartners } from "../../hooks/UsePartners";
 import TestPartnersList from "./TestPartnersList";
 
 const TestPage = () => {

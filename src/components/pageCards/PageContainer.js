@@ -1,10 +1,15 @@
 import React from "react";
-import StoryCard from "../StoryCards/StoryCard";
-import SampleImage from "../../../../../assets/logos/esitisyeri-kalp-logo.png";
+import PageCard from "./PageCard";
+import SampleImage from "../../assets/logos/esitisyeri-kalp-logo.png";
 
-const StoryCardContainer = ({ partners }) => {
+
+
+const PageContainer = ({ partners }) => {
+
+
+
   return (
-    <div className="flex overflow-x-auto gap-4 py-4 px-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
       {partners.map((partner, index) => {
         const cells = partner.Cells || [];
         const name = cells[2]?.DisplayText || "İsim yok";
@@ -16,22 +21,28 @@ const StoryCardContainer = ({ partners }) => {
           const filesJson = cells[16]?.Value || "[]";
           const files = JSON.parse(filesJson);
           if (Array.isArray(files) && files.length > 0) {
-            image = files[0].src || SampleImage;
+            image = files[0]?.src ?? SampleImage;
           }
         } catch (err) {
           console.warn("Resim verisi okunamadı:", err);
         }
-   // Partner ID’yi bul
+
+        // Partner ID’yi bul
         const objectCell = cells.find(c => c.ColumnName === "vw_esit_isyeri.objectid");
         const objectId = objectCell?.Value ? String(objectCell.Value) : null;
-
+if (!partners) {
+  return (
+    <div className="flex justify-center items-center h-64 m-16">
+        <p text-gray-500 text-lg>Yükleniyor...</p>
+    </div>
+  );
+}
         return (
-          <StoryCard
-          key={objectId || index}   // güvenli key
-            id={objectId} //id idi ama objectId olması gerekti
-
+          <PageCard
+            key={objectId || index}   // güvenli key için veya index
+            id={objectId}
             name={name}
-            image={image}  
+            image={image}
             extraInfo={`Yetkili: ${yetkili} | Tür: ${faaliyet}`}
           />
         );
@@ -40,4 +51,4 @@ const StoryCardContainer = ({ partners }) => {
   );
 };
 
-export default StoryCardContainer;
+export default PageContainer;

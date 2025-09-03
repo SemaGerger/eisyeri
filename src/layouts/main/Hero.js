@@ -1,10 +1,6 @@
 import React from "react";
-import CTAButton from "../../../components/common/cardTitleButton/CTAButton";
-import videoBg from "../../../assets/videos/esitIsyeriVideo.mp4";
-
-
-
-
+import CTAButton from "../../components/button/CTAButton";
+import videoBg from "../../assets/videos/esitIsyeriVideo.mp4";
 
 const Hero = () => {
 

@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../../components/mainContent/header/Layout";
-import { usePartners } from "../../components/common/hooks/usePartners";
-import SectionTitle from "../../components/common/cardTitleButton/section/SectionTitle";
-import PageContainer from "../../components/common/cardTitleButton/pageCards/PageContainer";
+import Layout from "../../layouts/Layout";
+import { usePartners } from "../../hooks/UsePartners";
+import SectionTitle from "../../components/section/SectionTitle";
+import PageContainer from "../../components/pageCards/PageContainer";
 
 
 

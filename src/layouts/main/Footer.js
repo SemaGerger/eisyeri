@@ -1,5 +1,5 @@
 import { MapPin, Phone, Facebook, Twitter, Instagram } from "lucide-react";
-import logoWhite from "../../../assets/logos/esitisyeri-white.png";
+import logoWhite from "../../assets/logos/esitisyeri-white.png";
 
 export default function Footer() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/mainContent/header/Layout";
+import Layout from "../layouts/Layout";
 import { logo } from "../api/DefaultData";
 
 const LogomuzPage = () => {

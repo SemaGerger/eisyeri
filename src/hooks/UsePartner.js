@@ -1,5 +1,5 @@
   import { useState, useEffect } from "react";
-  import { getPartner } from "../../../api/partnersApi";
+  import { getPartner } from "../api/partnersApi";
 
   export const usePartner = (id) => {
     const [partner, setPartner] = useState(null);
