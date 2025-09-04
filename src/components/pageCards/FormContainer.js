@@ -19,7 +19,7 @@ const FormContainer = () => {
       )}
 
       <form
-        className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-hidden"
+        className="md:w-2/2 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-hidden"
         onSubmit={(e) => handleSubmit(e, formData, resetForm)}
       >
         {/* inputlar */}
