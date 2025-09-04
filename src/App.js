@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import AboutPresident from './pages/AboutPresident';
 import Logomuz from './pages/Logomuz';
 import PartnerDetailsPage from './pages/partners/PartnerDetailsPage';
+import FormPage from './pages/FormPage';
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
           <Route path='/about' element={<About />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/logomuz' element={<Logomuz />}></Route>
-         
+         <Route path='/formPage' element={<FormPage />}></Route>
            
           
           </Routes>

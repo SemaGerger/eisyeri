@@ -11,15 +11,15 @@ export const usePartners = (page = 1, limit = 5) => {
       try {
         const partnersDataApi = await getPartners(page, limit);
 
-        // sadece API’den gelen veriyi kullan, yoksa boş dizi
+        // Sadece API’den gelen veriyi kullanır yoksa boş
         if (partnersDataApi && partnersDataApi.length > 0) {
           setPartners(partnersDataApi);
         } else {
-          setPartners([]); // veri yoksa boş dizi
+          setPartners([]);
         }
       } catch (err) {
         console.error("Partner verisi çekilemedi:", err);
-        setPartners([]); // hata olursa da boş dizi
+        setPartners([]); 
       } finally {
         setLoading(false);
       }
