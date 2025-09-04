@@ -31,6 +31,7 @@ const Contact = () => {
         {/* Map */}
         <div className="mb-12">
           <iframe
+            title="Büyükçekmece Belediyesi Haritası"
             src="https://maps.google.com/maps?q=41.02115252472539,28.5852208036723&hl=tr&z=16&output=embed"
             width="100%"
             height="400"

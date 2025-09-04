@@ -6,7 +6,7 @@ import CheckboxInput from "../input/CheckboxInput";
 import useFormData from "../../hooks/form/useFormData";
 import useSubmitForm from "../../hooks/form/useSubmitForm";
 
-const FormComponent = () => {
+const FormContainer = () => {
   const { formData, handleChange, resetForm } = useFormData();
   const { submitted, handleSubmit } = useSubmitForm();
 
@@ -23,7 +23,7 @@ const FormComponent = () => {
         onSubmit={(e) => handleSubmit(e, formData, resetForm)}
       >
         {/* inputlar */}
-        <TextInput label="Kimlik No" name="kimlikNo" value={formData.kimlikNo} onChange={handleChange} type="tel" required />
+        <TextInput label="*Kimlik No" name="kimlikNo" value={formData.kimlikNo} onChange={handleChange} type="tel" required />
         <DateInput label="Doğum Tarihi" day={formData.birthDay} month={formData.birthMonth} year={formData.birthYear} onChange={handleChange} />
         <TextInput label="Ad" name="ad" value={formData.ad} onChange={handleChange} required />
         <TextInput label="Soyad" name="soyad" value={formData.soyad} onChange={handleChange} required />
@@ -75,4 +75,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default FormContainer;

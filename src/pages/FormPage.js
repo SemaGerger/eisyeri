@@ -1,10 +1,12 @@
 import React from "react";
 import logo from "../assets/logos/esitIsyeriLogo.png";
-import FormComponent from "../components/form/FormComponent";
+import FormContainer from "../components/pageCards/FormContainer";
+
 
 const FormPage = () => {
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-100 p-4">
+   
+    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-100 p-2">
       <div className="bg-white rounded-xl shadow-xl w-full max-w-6xl p-8 flex flex-col md:flex-row gap-8">
         
         {/* Logo ve açıklama */}
@@ -17,9 +19,10 @@ const FormPage = () => {
         </div>
 
         {/* Form */}
-        <FormComponent />
+        <FormContainer />
       </div>
     </div>
+ 
   );
 };
 
