@@ -1,6 +1,6 @@
 const TextInput = ({ label, name, value, onChange, type = "text", required = false }) => (
   <div className="flex flex-col md:flex-row items-center mb-4">
-    <label className="w-full md:w-1/3 mb-2 md:mb-0 text-right pr-4 font-medium">
+    <label className="w-full md:w-1/3 mb-2 md:mb-0 text-left pr-4 font-medium">
       {label}
     </label>
     <input

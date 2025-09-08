@@ -25,11 +25,11 @@ const FormContainer = () => {
         {/* inputlar */}
         <TextInput label="*Kimlik No" name="kimlikNo" value={formData.kimlikNo} onChange={handleChange} type="tel" required />
         <DateInput label="Doğum Tarihi" day={formData.birthDay} month={formData.birthMonth} year={formData.birthYear} onChange={handleChange} />
-        <TextInput label="Ad" name="ad" value={formData.ad} onChange={handleChange} required />
-        <TextInput label="Soyad" name="soyad" value={formData.soyad} onChange={handleChange} required />
-        <TextInput label="İşyeri Ünvanı" name="isyeriUnvani" value={formData.isyeriUnvani} onChange={handleChange} required />
-        <TextInput label="Yetkili Kişi" name="yetkiliKisi" value={formData.yetkiliKisi} onChange={handleChange} required />
-        <TextInput label="Cep Telefonu" name="cepTelefonu" value={formData.cepTelefonu} onChange={handleChange} required type="tel" />
+        <TextInput label="*Ad" name="ad" value={formData.ad} onChange={handleChange} required />
+        <TextInput label="*Soyad" name="soyad" value={formData.soyad} onChange={handleChange} required />
+        <TextInput label="*İşyeri Ünvanı" name="isyeriUnvani" value={formData.isyeriUnvani} onChange={handleChange} required />
+        <TextInput label="*Yetkili Kişi" name="yetkiliKisi" value={formData.yetkiliKisi} onChange={handleChange} required />
+        <TextInput label="*Cep Telefonu" name="cepTelefonu" value={formData.cepTelefonu} onChange={handleChange} required type="tel" />
         <SelectInput
           label="Mahalle"
           name="mahalle"

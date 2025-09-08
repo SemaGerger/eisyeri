@@ -11,8 +11,6 @@ const PartnerDetailsPage = () => {
   if (loading) return <Layout><p>Yükleniyor...</p></Layout>;
   if (!partner) return <Layout><p>Partner bulunamadı.</p></Layout>;
 
-
-
   return (
     <Layout>
       
