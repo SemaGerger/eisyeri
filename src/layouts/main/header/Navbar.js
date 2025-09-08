@@ -5,12 +5,13 @@ import belediye from "../../../assets/logos/bcekmecebldlogo.png";
 
 const links = [
   { name: "AnaSayfa", to: "/" },
-  { name: "Başkan Hakkında", to: "/aboutPresident" },
-  { name: "Eşit İşyerleri", to: "/esitisyerleri" },
-  { name: "Hakkımızda", to: "/about" },
-  { name: "Bize Ulaşın", to: "/contact" },
+  { name: "Başkan Hakkında", to: "/baskan-hakkinda" },
+  { name: "Eşit İşyerleri", to: "/esit-isyerleri" },
+  { name: "Hakkımızda", to: "/hakkimizda" },
+  { name: "Bize Ulaşın", to: "/iletisim" },
   { name: "Logomuz", to: "/logomuz" },
 ];
+
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

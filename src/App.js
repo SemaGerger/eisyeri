@@ -14,19 +14,18 @@ export default function App() {
   return (
      <Router>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/home' element={<Home />}></Route>
-          <Route path='/aboutPresident' element={<AboutPresident />}></Route>
-          <Route path='/esitisyerleri' element={<PartnersPage />}></Route>
-          <Route path='/details/:id' element={<PartnerDetailsPage />}></Route>
-          <Route path='/test' element={<Test />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/logomuz' element={<Logomuz />}></Route>
-         <Route path='/formPage' element={<FormPage />}></Route>
-           
-          
-          </Routes>
+  <Route path='/' element={<Home />} />
+  <Route path='/anasayfa' element={<Home />} />
+  <Route path='/baskan-hakkinda' element={<AboutPresident />} />
+  <Route path='/esit-isyerleri' element={<PartnersPage />} />
+  <Route path='/detay/:id' element={<PartnerDetailsPage />} />
+  <Route path='/test' element={<Test />} />
+  <Route path='/hakkimizda' element={<About />} />
+  <Route path='/iletisim' element={<Contact />} />
+  <Route path='/logomuz' element={<Logomuz />} />
+  <Route path='/form' element={<FormPage />} />
+</Routes>
+
         </Router>
   )
 }
