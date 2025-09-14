@@ -5,9 +5,20 @@ const ModalVideo = ({ src, onClose }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    safePlay(videoRef.current);
-    return () => safePause(videoRef.current);
-  }, [src]);
+    const videoEl = videoRef.current;
+    safePlay(videoEl);
+
+    // ESC ile kapatma
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      safePause(videoEl);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [src, onClose]);
 
   return (
     <div
@@ -16,20 +27,24 @@ const ModalVideo = ({ src, onClose }) => {
     >
       <div
         className="relative bg-black p-4 rounded-lg max-w-3xl w-full"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()} // içeride tıklamayı engelle
       >
+        {/* Kapatma butonu */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-white text-xl font-bold z-50"
+          aria-label="Kapat"
+          className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-red-400 transition"
         >
           ×
         </button>
+
+        {/* Video */}
         <video
           ref={videoRef}
           src={src}
           controls
           autoPlay
-          className="w-full h-auto rounded"
+          className="w-full h-auto rounded shadow-lg"
         />
       </div>
     </div>
