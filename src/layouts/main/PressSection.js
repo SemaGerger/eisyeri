@@ -131,7 +131,7 @@ const PressSection = () => {
     );
   };
 
-  // PressCard bileşeni
+
   const PressCard = ({ name, image, video, extraInfo, onClick, className = "" }) => {
     return (
       <div
@@ -146,7 +146,7 @@ const PressSection = () => {
               muted
               playsInline
             />
-            {/* Play ikon overlay */}
+            {/* Play ikon */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
               <div className="bg-black bg-opacity-50 rounded-full p-3">
                 <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -180,7 +180,7 @@ const PressSection = () => {
     );
   };
 
-  // Kartları gruplara ayırma: İlk 3, sonraki 4 (2x2)
+  // Kart grupları
   const firstThree = pressData.slice(0, 3);
   const nextFour = pressData.slice(3, 7);
 
@@ -189,7 +189,7 @@ const PressSection = () => {
       <SectionTitle>Basında Biz</SectionTitle>
       
       <div className="max-w-7xl w-full">
-        {/* İlk 3 kart - grid */}
+        {/* İlk 3  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {firstThree.map((item) => (
             <PressCard

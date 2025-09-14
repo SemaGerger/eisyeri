@@ -29,7 +29,8 @@ const siteConfig = {
   },
   // Belediye
   belediyeName: "Büyükçekmece Belediyesi",
-  belediyeUrl: "https://www.bcekmece.bel.tr",
+  belediyeUrl: "https://bcekmece.bel.tr",
+  ebelediyeUrl: "https://ebelediye.bcekmece.bel.tr",
 
   // Logolar
   assets: {
@@ -58,10 +59,10 @@ const siteConfig = {
 
   // Sosyal medya
   socialLinks: {
-    facebook: "https://facebook.com/bcekmecebld",
-    twitter: "https://twitter.com/bcekmecebld",
-    instagram: "https://instagram.com/bcekmecebld",
-    youtube: "https://youtube.com/@bcekmecebld",
+    facebook: "https://tr-tr.facebook.com/Buyukcekmecebld",
+    twitter: "https://x.com/BuyukcekmeceBld",
+    instagram: "https://www.instagram.com/buyukcekmecebld/#",
+
   },
 
 

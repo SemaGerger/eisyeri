@@ -1,4 +1,3 @@
-// api/partnersApi.js
 import axios from "axios";
 
 // Axios örneği oluşturabiliriz (opsiyonel, baseURL vs için)

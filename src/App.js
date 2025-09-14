@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
-import Test from "./components/test/TestPage";
+
 import PartnersPage from "./pages/partners/PartnersPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/esit-isyerleri" element={<PartnersPage />} />
         <Route path="/detay/:id" element={<PartnerDetailsPage />} />
 
-        <Route path="/test" element={<Test />} />
+     
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/logomuz" element={<Logomuz />} />

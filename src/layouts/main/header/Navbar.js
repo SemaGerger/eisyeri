@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="hidden md:flex items-center space-x-10">
+      <div className="hidden xl:flex items-center space-x-10">
         <nav className="flex flex-row items-center space-x-10">
           {siteConfig.navLinks.map((link) => (
             <Link
@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger */}
-      <div className="md:hidden flex items-center">
+      <div className="xl:hidden flex items-center">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="text-gray-700 focus:outline-none"
@@ -81,7 +81,7 @@ const Navbar = () => {
 
       {/* Mobile */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-6 flex flex-col items-start space-y-4 md:hidden animate-fadeIn z-40">
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg px-6 py-6 flex flex-col items-start space-y-4 xl:hidden animate-fadeIn z-40">
           <nav className="flex flex-col space-y-4 items-start pl-4 w-full">
             {siteConfig.navLinks.map((link) => (
               <Link
