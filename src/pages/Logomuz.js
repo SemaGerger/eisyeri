@@ -1,15 +1,25 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 import { logo } from "../api/DefaultData";
+import siteConfig from "../config/siteConfig";
 
-const LogomuzPage = () => {
+  
+  const { brand } = siteConfig;
+
+const Logomuz = () => {
   return (
     <Layout>
-      <div className="py-12 px-6 mt-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-blue-700">
-        Logomuz ve Marka Tescil Belgesi
-      </h1>
-        
+     <div className="py-12 px-6 mt-8">
+        <h1 className="text-4xl font-bold text-center mb-4 text-blue-700">
+          {brand.title}
+        </h1>
+
+
+          {brand.description && (
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            {brand.description}
+          </p>
+        )}
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {logo.map((item) => (
@@ -28,4 +38,4 @@ const LogomuzPage = () => {
   );
 };
 
-export default LogomuzPage;
+export default Logomuz;

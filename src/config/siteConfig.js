@@ -6,6 +6,7 @@ import heroVideo from "../assets/videos/esitIsyeriVideo.mp4";
 
 
 
+
 const siteConfig = {
 
   // Menü linkleri
@@ -71,7 +72,16 @@ const siteConfig = {
     partnerActivity: "Faaliyet türü yok",
   },
 
+  brand: {
+    title: "Logomuz ve Marka Kimliği",
+    description: "Eşit İşyeri projemizin logosu, şeffaflık, eşitlik ve güven ilkelerini temsil eder. Logomuz ve marka tescil belgemiz aşağıda yer almaktadır.",
+    title1: "Eşit İşyeri Logosu",
+    subtitle1: "Eşit işyeri",
+    image: esitIsyeriLogo,
+    title2: "Belediye Logosu",
+    subtitle2: "Büyükçekmece Belediyesi",
 
+  },
 
   // Tema
   theme: {
@@ -81,6 +91,15 @@ const siteConfig = {
       gray: "#6b7280",
     },
   },
+
+  // Favicon 
+    favicon: {
+      icon: "/favicon.ico",
+    iconTitle: "Eşit İşyeri - Büyükçekmece Belediyesi",
+},
+
+
 };
+
 
 export default siteConfig;
