@@ -12,7 +12,7 @@ const PartnersPage = () => {
 
   return (
     <Layout>
-      <div className="py-12 px-6 mt-8">
+      <div className="py-12 px-6 mt-16">
         <SectionTitle>Eşit İşyerleri</SectionTitle>
         <PageContainer partners={partners} loading={loading} />
     
