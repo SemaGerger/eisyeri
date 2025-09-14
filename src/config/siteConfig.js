@@ -1,9 +1,31 @@
 import belediyeLogo from "../assets/logos/bcekmecebldlogo.png";
 import esitIsyeriLogo from "../assets/logos/esitisyeri-kalp-logo.png";
 import esitIsyeriYazisiLogo from "../assets/logos/esitisyeri-yazisi-logo.png";
+import heroVideo from "../assets/videos/esitIsyeriVideo.mp4";
+
+
+
 
 const siteConfig = {
 
+  // Menü linkleri
+  navLinks: [
+    { name: "AnaSayfa", to: "/" },
+    { name: "Başkan Hakkında", to: "/baskan-hakkinda" },
+    { name: "Eşit İşyerleri", to: "/esit-isyerleri" },
+    { name: "Hakkımızda", to: "/hakkimizda" },
+    { name: "Bize Ulaşın", to: "/iletisim" },
+    { name: "Logomuz", to: "/logomuz" },
+  ],
+
+  // Hero
+  hero: {
+    title: "Esit İsyeri",
+    highlight: "Projesi",
+    subtitle: "Büyükçekmece Belediyesi Ruhsat ve Denetim Müdürlüğü",
+    ctaText: "İşyerinizi Kaydedin",
+    video: heroVideo,
+  },
   // Belediye
   belediyeName: "Büyükçekmece Belediyesi",
   belediyeUrl: "https://www.bcekmece.bel.tr",
@@ -25,16 +47,6 @@ const siteConfig = {
       },
     },
   },
-
-  // Menü linkleri
-  navLinks: [
-    { name: "AnaSayfa", to: "/" },
-    { name: "Başkan Hakkında", to: "/baskan-hakkinda" },
-    { name: "Eşit İşyerleri", to: "/esit-isyerleri" },
-    { name: "Hakkımızda", to: "/hakkimizda" },
-    { name: "Bize Ulaşın", to: "/iletisim" },
-    { name: "Logomuz", to: "/logomuz" },
-  ],
 
   // İletişim
   contact: {
