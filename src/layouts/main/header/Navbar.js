@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
-//deneme
+//denemedir
   return (
     <>
       {/* Desktop Navbar */}
