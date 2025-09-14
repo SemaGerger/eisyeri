@@ -4,7 +4,7 @@ import esitIsyeriYazisiLogo from "../assets/logos/esitisyeri-yazisi-logo.png";
 
 const siteConfig = {
 
-  // belediye
+  // Belediye
   belediyeName: "Büyükçekmece Belediyesi",
   belediyeUrl: "https://www.bcekmece.bel.tr",
 
@@ -26,7 +26,7 @@ const siteConfig = {
     },
   },
 
-  // Menü Linkleri
+  // Menü linkleri
   navLinks: [
     { name: "AnaSayfa", to: "/" },
     { name: "Başkan Hakkında", to: "/baskan-hakkinda" },
@@ -36,14 +36,14 @@ const siteConfig = {
     { name: "Logomuz", to: "/logomuz" },
   ],
 
-  // İletişim Bilgileri
+  // İletişim
   contact: {
     phone: "+90 212 123 45 67",
     email: "info@bcekmece.bel.tr",
     address: "Büyükçekmece Belediyesi, İstanbul, Türkiye",
   },
 
-  // Sosyal Medya
+  // Sosyal medya
   socialLinks: {
     facebook: "https://facebook.com/bcekmecebld",
     twitter: "https://twitter.com/bcekmecebld",
@@ -51,7 +51,17 @@ const siteConfig = {
     youtube: "https://youtube.com/@bcekmecebld",
   },
 
-  // Tema Ayarları
+
+  // Default işlemler
+  defaultTexts: {
+    partnerName: "İsim yok",
+    partnerContact: "Yetkili yok",
+    partnerActivity: "Faaliyet türü yok",
+  },
+
+
+
+  // Tema
   theme: {
     colors: {
       primary: "#004aad",

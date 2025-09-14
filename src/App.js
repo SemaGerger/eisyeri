@@ -18,6 +18,7 @@ export default function App() {
         <Route path="/baskan-hakkinda" element={<AboutPresident />} />
         <Route path="/esit-isyerleri" element={<PartnersPage />} />
         <Route path="/detay/:id" element={<PartnerDetailsPage />} />
+
         <Route path="/test" element={<Test />} />
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/iletisim" element={<Contact />} />

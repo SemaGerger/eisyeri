@@ -1,7 +1,7 @@
 import React from "react";
-import PageCard from "./PageCard";
+import PageCard from "../pageCards/PageCard";
 import SampleImage from "../../assets/logos/esitisyeri-kalp-logo.png";
-
+import { Link } from "react-router-dom";
 
 
 const PageContainer = ({ partners }) => {
@@ -30,21 +30,29 @@ const PageContainer = ({ partners }) => {
         // Partner ID’yi bul
         const objectCell = cells.find(c => c.ColumnName === "vw_esit_isyeri.objectid");
         const objectId = objectCell?.Value ? String(objectCell.Value) : null;
-if (!partners) {
-  return (
-    <div className="flex justify-center items-center h-64 m-16">
-        <p text-gray-500 text-lg>Yükleniyor...</p>
-    </div>
-  );
-}
+      
+        if (!partners) {
+          return (
+            <div className="flex justify-center items-center h-64 m-16">
+              <p text-gray-500 text-lg>Yükleniyor...</p>
+            </div>
+          );
+        }
+
         return (
-          <PageCard
-            key={objectId || index}   // güvenli key için veya index
-            id={objectId}
-            name={name}
-            image={image}
-            extraInfo={`Yetkili: ${yetkili} | Tür: ${faaliyet}`}
-          />
+          <Link
+            key={objectId || `partner-${index}`}
+            to={`/detay/${objectId}`}
+            state={{ image }}
+            className="block"
+          >
+            <PageCard
+              id={objectId}
+              name={name}
+              image={image}
+              extraInfo={`Yetkili: ${yetkili} | Tür: ${faaliyet}`}
+            />
+          </Link>
         );
       })}
     </div>

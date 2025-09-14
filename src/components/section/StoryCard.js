@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import siteConfig from "../../config/siteConfig";
 
 const StoryCard = ({ id, name, image, extraInfo, index }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/details/${id}`, { state: { image } });
+   navigate(`/detay/${id}`, { state: { image } });
   };
 
   return (
@@ -18,7 +19,7 @@ const StoryCard = ({ id, name, image, extraInfo, index }) => {
         {image ? (
           <img
             src={image}
-            alt={name || "Partner"}
+            alt={name || siteConfig.defaultTexts.partnerName} 
             className="w-full h-full object-cover rounded-full border-4 border-blue relative z-10 shadow-lg"
           />
         ) : (
