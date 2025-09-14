@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
-//deneme
+
   return (
     <>
       {/* Desktop Navbar */}
@@ -26,15 +26,16 @@ const Navbar = () => {
           ))}
         </nav>
 
+        {/* Belediye Logo */}
         <a
-          href={siteConfig.baseUrl}
+          href={siteConfig.belediyeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center space-x-2"
         >
           <img
-            src={siteConfig.assets.belediyeLogo}
-            alt={siteConfig.siteName}
+            src={siteConfig.assets.logos.belediye.src}
+            alt={siteConfig.assets.logos.belediye.alt}
             className="h-12"
           />
         </a>
@@ -103,14 +104,14 @@ const Navbar = () => {
           {/* Belediye Logo */}
           <div className="flex justify-center w-full pt-4 border-t border-gray-100">
             <a
-              href={siteConfig.baseUrl}
+              href={siteConfig.belediyeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2"
             >
               <img
-                src={siteConfig.assets.belediyeLogo}
-                alt={siteConfig.siteName}
+                src={siteConfig.assets.logos.belediye.src}
+                alt={siteConfig.assets.logos.belediye.alt}
                 className="h-12"
               />
             </a>

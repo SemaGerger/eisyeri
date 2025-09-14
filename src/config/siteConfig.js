@@ -1,17 +1,29 @@
-// src/config/siteConfig.js
-
 import belediyeLogo from "../assets/logos/bcekmecebldlogo.png";
+import esitIsyeriLogo from "../assets/logos/esitisyeri-kalp-logo.png";
+import esitIsyeriYazisiLogo from "../assets/logos/esitisyeri-yazisi-logo.png";
 
 const siteConfig = {
-    
-  // Genel Site Bilgileri
-  siteName: "Büyükçekmece Belediyesi",
-  slogan: "Halkımız için daha iyi bir gelecek",
-  baseUrl: "https://www.bcekmece.bel.tr",
+
+  // belediye
+  belediyeName: "Büyükçekmece Belediyesi",
+  belediyeUrl: "https://www.bcekmece.bel.tr",
 
   // Logolar
   assets: {
-    belediyeLogo: belediyeLogo,
+    logos: {
+      belediye: {
+        src: belediyeLogo,
+        alt: "Büyükçekmece Belediyesi",
+      },
+      esitIsyeri: {
+        src: esitIsyeriLogo,
+        alt: "Eşit İşyeri",
+      },
+      esitIsyeriYazisi: {
+        src: esitIsyeriYazisiLogo,
+        alt: "Eşit İşyeri Yazısı",
+      },
+    },
   },
 
   // Menü Linkleri
