@@ -137,7 +137,7 @@ const StoryCardContainer = ({ partners }) => {
           return (
             <div
               key={objectId || `partner-${index}`}
-              className="flex-shrink-0 w-64" // Kart genişliği
+              className="flex-shrink-0 w-18 md:w-60"
             >
               <Link
                 to={`/detay/${objectId}`}

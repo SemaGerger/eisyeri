@@ -1,45 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="utf-8" />
- <title>Eşit İşyeri</title>
-    <link rel="icon" href="esitisyeri-kalp-logo.ico" />
-    <meta name="theme-color" content="#d63384" />
-    <meta name="description" content="Büyükçekmece Belediyesi Eşit İşyeri Projesi" />
-    <link rel="apple-touch-icon" href="esitisyeri-kalp-logo.png" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- Title -->
+    <title>Eşit İşyeri</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/esitisyeri-kalp-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/esitisyeri-kalp-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/esitisyeri-kalp-logo.png">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Büyükçekmece Belediyesi Eşit İşyeri Projesi – kamu destekli eşit işyeri uygulamaları ve bilgiler.">
+    <meta name="keywords" content="Büyükçekmece, Eşit İşyeri, belediye, proje, destek, işyeri">
+    <meta name="author" content="Büyükçekmece Belediyesi">
+    <meta name="robots" content="index, follow">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#d63384">
+
+    <!-- Open Graph / Sosyal Medya -->
+    <meta property="og:title" content="Büyükçekmece Belediyesi - Eşit İşyeri" />
+    <meta property="og:description" content="Büyükçekmece Belediyesi Eşit İşyeri Projesi hakkında bilgi edinin." />
+    <meta property="og:image" content="%PUBLIC_URL%/esitisyeri-kalp-logo.png" />
+    <meta property="og:url" content="https://www.bcekmece.bel.tr" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Kartları -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Büyükçekmece Belediyesi - Eşit İşyeri" />
+    <meta name="twitter:description" content="Büyükçekmece Belediyesi Eşit İşyeri Projesi hakkında bilgi edinin." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/esitisyeri-kalp-logo.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Büyükçekmece Belediyesi",
+      "url": "https://www.bcekmece.bel.tr",
+      "logo": "%PUBLIC_URL%/esitisyeri-kalp-logo.png",
+      "sameAs": [
+        "https://facebook.com/bcekmecebld",
+        "https://twitter.com/bcekmecebld",
+        "https://instagram.com/bcekmecebld",
+        "https://youtube.com/@bcekmecebld"
+      ]
+    }
+    </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

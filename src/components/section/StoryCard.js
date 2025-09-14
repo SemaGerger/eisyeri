@@ -15,7 +15,7 @@ const StoryCard = ({ id, name, image, extraInfo, index }) => {
       className="flex flex-col items-center cursor-pointer w-28 md:w-32 shrink-0
                  transform transition-transform duration-500 hover:scale-110 hover:-translate-y-2"
     >
-      <div className="relative w-28 h-28 md:w-32 md:h-32 mb-2">
+      <div className="relative w-28 h-28 md:w-48 md:h-48 mb-4">
         {image ? (
           <img
             src={image}

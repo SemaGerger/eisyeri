@@ -92,11 +92,6 @@ const siteConfig = {
     },
   },
 
-  // Favicon 
-    favicon: {
-      icon: "/favicon.ico",
-    iconTitle: "Eşit İşyeri - Büyükçekmece Belediyesi",
-},
 
 
 };
