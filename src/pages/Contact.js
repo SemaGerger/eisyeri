@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout";
 import { MapPin, Phone, Mail, Clock, Users, ExternalLink } from "lucide-react";
 
 const Contact = () => {
-  // Yönlendirme yapılacak URL
-  const externalFormUrl = "https://ornek-form-sitesi.com/iletisim";
+
+  const externalFormUrl = "https://ulakbel.bcekmece.bel.tr/WebBasvuru/esitisyerioneri#";
 
   const handleRedirect = () => {
     // Yeni sekmede form sayfasını aç
@@ -25,9 +25,9 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Harita ve İletişim Bilgileri */}
+        {/* Harita veri */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Harita */}
+     
           <div className="rounded-2xl overflow-hidden shadow-xl h-96">
             <iframe
               title="Büyükçekmece Belediyesi Haritası"
@@ -40,7 +40,7 @@ const Contact = () => {
             />
           </div>
 
-          {/* İletişim Bilgileri */}
+          {/* İletişim  */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-8 flex items-center">
               <Users className="mr-3 text-blue-600" size={32} />
@@ -91,7 +91,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* İletişim Formu Yönlendirme Butonu */}
+        {/* İletişim Formu Yönlendirme */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">
