@@ -5,12 +5,12 @@ import siteConfig from "../../config/siteConfig";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-200">
-      {/* Top Footer */}
+      
       <div className="py-10 border-b border-gray-700">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo & Contact */}
+          {/* Logo, Contact */}
           <div>
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center py-5">
               <img src={logoWhite} alt="Eşit İşyeri" className="h-12" />
             </a>
             <ul className="space-y-4">
@@ -66,14 +66,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/hakkimizda" className="hover:text-blue-400">
+                <a href="/hakkimizda#basvuru-sartlari" className="hover:text-blue-400">
                   Başvuru Şartları
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Media */}
+          {/* Social m. */}
           <div>
             <h3 className="text-lg mb-2 border-b-4 border-blue-400 inline-block pb-1">
               Sosyal Medya
@@ -115,7 +115,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* About */}
+          {/* About text */}
           <div>
             <h3 className="text-lg mb-2 border-b-4 border-blue-400 inline-block pb-1">
               Eşit İşyeri
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Footer */}
+      {/* Bottom footer */}
       <div className="py-4 bg-gray-800">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm text-gray-400 text-center md:text-left">

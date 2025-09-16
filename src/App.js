@@ -8,6 +8,7 @@ import AboutPresident from "./pages/AboutPresident";
 import Logomuz from "./pages/Logomuz";
 import PartnerDetailsPage from "./pages/partners/PartnerDetailsPage";
 import FormPage from "./pages/FormPage";
+import TestPage from "./test/TestPage";
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/logomuz" element={<Logomuz />} />
         <Route path="/form" element={<FormPage />} />
+
+        <Route path="/test" component={TestPage} />
 
 
       </Routes>

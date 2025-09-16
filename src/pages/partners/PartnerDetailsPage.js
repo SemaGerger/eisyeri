@@ -1,20 +1,23 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { usePartner } from "../../hooks/UsePartner";
+
 import Layout from "../../layouts/Layout";
-import PartnerDetailsCard from "../../components/pageCards/ParnerDetailsCard";
+import ParnerDetailsCard from "../../components/pageCards/ParnerDetailsCard";
+import StatusMessage from "../../components/status/StatusMessage";
+
 
 const PartnerDetailsPage = () => {
   const { id } = useParams();
-  const { partner, loading } = usePartner(id);
+  const { partner, loading, error } = usePartner(id);
 
-  if (loading) return <Layout><p>Yükleniyor...</p></Layout>;
-  if (!partner) return <Layout><p>Partner bulunamadı.</p></Layout>;
+
 
   return (
     <Layout>
-      
-      <PartnerDetailsCard partner={partner} />
+      <div className="py-12 px-6  mt-16">
+      <ParnerDetailsCard partner={partner} loading={loading} error={error} />
+      </div>
     </Layout>
   );
 };

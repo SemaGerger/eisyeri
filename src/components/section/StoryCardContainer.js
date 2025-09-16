@@ -11,6 +11,24 @@ const StoryCardContainer = ({ partners }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [totalVisibleItems, setTotalVisibleItems] = useState(0);
+
+  // Görünür öğe sayısını ve mevcut indeksi hesapla
+  const updateScrollIndicator = () => {
+    if (containerRef.current && partners.length > 0) {
+      const container = containerRef.current;
+      const containerWidth = container.clientWidth;
+      const itemWidth = container.querySelector('.scroll-item')?.offsetWidth || 240;
+      const visibleItems = Math.floor(containerWidth / itemWidth);
+      
+      setTotalVisibleItems(visibleItems);
+      
+      const scrollPos = container.scrollLeft;
+      const newIndex = Math.floor(scrollPos / itemWidth);
+      setCurrentIndex(newIndex);
+    }
+  };
 
   // Scroll pozisyonunu kontrol et
   const checkScrollPosition = () => {
@@ -18,24 +36,29 @@ const StoryCardContainer = ({ partners }) => {
       const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
       setShowLeftArrow(scrollLeft > 0);
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+      
+      // Nokta indikatörünü güncelle
+      updateScrollIndicator();
     }
   };
 
-  // Scroll event liste
+  // Scroll event listener
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener("scroll", checkScrollPosition);
+      window.addEventListener("resize", checkScrollPosition);
       checkScrollPosition();
     }
     return () => {
       if (container) {
         container.removeEventListener("scroll", checkScrollPosition);
       }
+      window.removeEventListener("resize", checkScrollPosition);
     };
   }, [partners]);
 
-  // Drag
+  // Drag events
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
@@ -54,7 +77,7 @@ const StoryCardContainer = ({ partners }) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll hızı
+    const walk = (x - startX) * 2;
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -71,6 +94,18 @@ const StoryCardContainer = ({ partners }) => {
     }
   };
 
+  // index scrool
+  const scrollToIndex = (index) => {
+    if (containerRef.current && partners.length > 0) {
+      const container = containerRef.current;
+      const itemWidth = container.querySelector('.scroll-item')?.offsetWidth || 240;
+      container.scrollTo({
+        left: index * itemWidth,
+        behavior: "smooth"
+      });
+    }
+  };
+
   if (!partners) {
     return (
       <div className="flex justify-center items-center h-64 m-16">
@@ -79,14 +114,19 @@ const StoryCardContainer = ({ partners }) => {
     );
   }
 
+  // Nokta sayısını hesapla
+  const dotCount = partners.length > 0 && totalVisibleItems > 0 
+    ? Math.ceil(partners.length / totalVisibleItems) 
+    : 0;
+
   return (
-    <div className="relative mt-8">
+    <div className="relative mt-8 mb-28">
       {showLeftArrow && (
         <button
           onClick={scrollLeftHandler}
           className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 
                    bg-white/80 hover:bg-white rounded-full p-2 shadow-lg 
-                   transition-all duration-200 backdrop-blur-sm"
+                   transition-all duration-200 backdrop-blur-sm "
         >
           <ChevronLeft className="w-6 h-6 text-gray-700" />
         </button>
@@ -106,8 +146,8 @@ const StoryCardContainer = ({ partners }) => {
       {/* Scroll container */}
       <div
         ref={containerRef}
-        className="flex overflow-x-auto scrollbar-hide py-4 px-2
-                   cursor-grab active:cursor-grabbing"
+        className="flex overflow-x-auto hide-scrollbar py-4 px-2 cursor-grab active:cursor-grabbing"
+
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
@@ -137,7 +177,7 @@ const StoryCardContainer = ({ partners }) => {
           return (
             <div
               key={objectId || `partner-${index}`}
-              className="flex-shrink-0 w-18 md:w-60"
+              className="flex-shrink-0 w-18 md:w-60 scroll-item"
             >
               <Link
                 to={`/detay/${objectId}`}
@@ -155,6 +195,24 @@ const StoryCardContainer = ({ partners }) => {
           );
         })}
       </div>
+
+      {/* Dot indicator. */}
+      {dotCount > 1 && (
+        <div className="flex justify-center mt-4 space-x-2">
+          {Array.from({ length: dotCount }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToIndex(index * totalVisibleItems)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === Math.floor(currentIndex / totalVisibleItems)
+                  ? "bg-blue-600 scale-110"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+              aria-label={`Sayfa ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

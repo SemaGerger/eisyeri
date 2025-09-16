@@ -1,31 +1,28 @@
 import React from "react";
 import Layout from "../layouts/Layout";
 import { MapPin, Phone, Mail, Clock, Users, ExternalLink } from "lucide-react";
+import PageTitle from "../components/pageCards/PageTitle";
 
 const Contact = () => {
 
   const externalFormUrl = "https://ulakbel.bcekmece.bel.tr/WebBasvuru/esitisyerioneri#";
 
   const handleRedirect = () => {
-    // Yeni sekmede form sayfasını aç
     window.open(externalFormUrl, "_blank");
   };
 
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto px-4 py-12 mt-8">
-        {/* Başlık */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            İletişime Geçin
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Soru, görüş ve önerileriniz için aşağıdaki iletişim kanallarını kullanabilir 
-            veya iletişim formumuzu doldurabilirsiniz.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-4 py-12 mt-16">
+         {/* Title */}
+        <PageTitle
+          title="  İletişime Geçin"
+          subtitle=" Soru, görüş ve önerileriniz için aşağıdaki iletişim kanallarını kullanabilir 
+            veya iletişim formumuzu doldurabilirsiniz."
+        />
 
-        {/* Harita veri */}
+
+        {/* Map data */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
      
           <div className="rounded-2xl overflow-hidden shadow-xl h-96">
@@ -40,7 +37,7 @@ const Contact = () => {
             />
           </div>
 
-          {/* İletişim  */}
+          {/* Contacty  */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-8 flex items-center">
               <Users className="mr-3 text-blue-600" size={32} />
@@ -91,7 +88,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* İletişim Formu Yönlendirme */}
+        {/* Contact Form */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">

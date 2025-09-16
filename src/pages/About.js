@@ -1,38 +1,57 @@
 import React from "react";
-import { aboutData } from "../api/DefaultData";
+
+import aboutData from "../config/siteConfig";
 import Layout from "../layouts/Layout";
+import PageTitle from "../components/pageCards/PageTitle";
 
 const About = () => {
+  // Object to array
+  const sections = Object.values(aboutData.aboutData);
+
   return (
     <Layout>
-    <div className="max-w-6xl mx-auto px-4 py-12 mt-12">
-      <h1 className="text-4xl font-bold text-center mb-12 text-blue-700">
-        Eşit İşyeri Projesi
-      </h1>
+      <div className="max-w-7xl mx-auto px-4 py-16 mt-16">
+        {/* Title */}
+        <PageTitle 
+          title="Eşit İşyeri Projesi"
+          subtitle="İşyerlerinde eşitlik, çeşitlilik ve kapsayıcılık ilkelerini yaygınlaştırmak için tasarlanmış kapsamlı bir sosyal girişim"
+        />
 
-      {aboutData.map((section, index) => (
-        <div
-          key={index}
-          className={`flex flex-col md:flex-row items-center mb-12 ${
-            index % 2 === 1 ? "md:flex-row-reverse" : ""
-          }`}
-        >
-          <div className="md:w-1/2">
-            <img
-              src={section.image}
-              alt={section.title}
-              className="rounded-xl shadow-lg w-full h-auto object-cover"
-            />
+        {/* Content */}
+        {sections.map((section, index) => (
+          <div
+            key={section.id}
+            className={`flex flex-col md:flex-row items-center mb-20 ${
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Photo */}
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:shadow-2xl">
+                <img
+                  src={section.image}
+                  alt={section.title}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+            
+            {/* Metin */}
+            <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}>
+              <div className="p-2 bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <span className="text-blue-700 font-bold text-xl">{section.id}</span>
+              </div>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+                {section.title}
+              </h2>
+              <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">
+                {section.text}
+              </p>
+            </div>
           </div>
-          <div className="md:w-1/2 md:pl-8 md:pr-8 mt-6 md:mt-0">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              {section.title}
-            </h2>
-            <p className="text-gray-700 whitespace-pre-line">{section.text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </Layout>
   );
 };

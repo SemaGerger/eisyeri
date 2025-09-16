@@ -2,19 +2,30 @@ import React from "react";
 import { usePartners } from "../../hooks/UsePartners";
 import SectionTitle from "../../components/section/SectionTitle";
 import StoryCardContainer from "../../components/section/StoryCardContainer";
+import StatusMessage from "../../components/status/StatusMessage";
 
 const PartnersSection = () => {
-  const { partners, loading } = usePartners(1, 10); 
+  const { partners, loading, error } = usePartners(1, 10);
 
-  if (loading) {
-    return <p className="text-center text-gray-500">Yükleniyor...</p>;
-  }
+  // Veri durumunu kontrol et
+  const hasPartners = partners && partners.length > 0;
+  const showContent = !loading && !error && hasPartners;
 
   return (
     <section>
+      <SectionTitle
+        title="Eşit İşyerleri"
+        subtitle="Eşitlik, çeşitlilik ve kapsayıcılık ilkelerini benimseyen işyerleri"
+      />
       
-      <SectionTitle>Eşit İşyerleri</SectionTitle>
-      <StoryCardContainer partners={partners} />
+      <StatusMessage
+        loading={loading}
+        error={error}
+        data={hasPartners ? partners : null} // data null ise emptyMessage gösterir
+        emptyMessage="Firmalar bulunamadı..."
+      />
+
+      {showContent && <StoryCardContainer partners={partners} />}
     </section>
   );
 };

@@ -4,14 +4,40 @@ import esitIsyeriYazisiLogo from "../assets/logos/esitisyeri-yazisi-logo.png";
 import heroVideo from "../assets/videos/esitIsyeriVideo.mp4";
 
 
+import aboutImage1 from "../assets/images/about/Image1.jpg";
+import aboutImage2 from "../assets/images/about/Image2.jpg";
+import aboutImage3 from "../assets/images/about/Image3.jpg";
+
+import basindabiz from "../assets/videos/press/basindabiz.mp4";
+import FlashTV from "../assets/videos/press/FlashTv.mp4";
+import HalkTV from "../assets/videos/press/HalkTv.mp4";
+import HalkTvNisan2023 from "../assets/videos/press/HalkTv2.mp4";
+import Krt from "../assets/videos/press/KRT.mp4";
+import Tele1 from "../assets/videos/press/Tele1.mp4";
+import Tv5 from "../assets/videos/press/Tv5.mp4";
+
+/*import foto1 from "../assets/images/partners/1.jpeg";
+import foto2 from "../assets/images/partners/2.jpg";
+import foto3 from "../assets/images/partners/3.jpg";
+import foto4 from "../assets/images/partners/4.jpg";
+import foto5 from "../assets/images/partners/5.jpg";
+import foto6 from "../assets/images/partners/6.jpg";*/
+
+import president from "../assets/images/HasanAkgun.png";
+
+import logomuz from "../assets/logos/esitIsyeriLogo.png";
+import tescil from "../assets/images/tescil.png";
+
+import logo from "../assets/logos/esitisyeri-kalp-logo.png";
+import logoYazisi from "../assets/logos/esitisyeri-yazisi-logo.png";
+
 
 
 
 const siteConfig = {
 
-  // Menü linkleri
   navLinks: [
-    { name: "AnaSayfa", to: "/" },
+    { name: "Ana Sayfa", to: "/" },
     { name: "Başkan Hakkında", to: "/baskan-hakkinda" },
     { name: "Eşit İşyerleri", to: "/esit-isyerleri" },
     { name: "Hakkımızda", to: "/hakkimizda" },
@@ -19,20 +45,27 @@ const siteConfig = {
     { name: "Logomuz", to: "/logomuz" },
   ],
 
-  // Hero
+
+
+  logos: { main: logo, text: logoYazisi, name: "Eşit İşyeri", homeUrl: "/", },
+
+
+
   hero: {
-    title: "Esit İsyeri",
+    title: "Eşit İşyeri",
     highlight: "Projesi",
     subtitle: "Büyükçekmece Belediyesi Ruhsat ve Denetim Müdürlüğü",
     ctaText: "İşyerinizi Kaydedin",
+    ctaUrl: "https://ulakbel.bcekmece.bel.tr/WebBasvuru/esitisyeri#/",
     video: heroVideo,
   },
-  // Belediye
+
+
+
   belediyeName: "Büyükçekmece Belediyesi",
   belediyeUrl: "https://bcekmece.bel.tr",
   ebelediyeUrl: "https://ebelediye.bcekmece.bel.tr",
 
-  // Logolar
   assets: {
     logos: {
       belediye: {
@@ -50,14 +83,13 @@ const siteConfig = {
     },
   },
 
-  // İletişim
   contact: {
     phone: "+90 212 123 45 67",
     email: "info@bcekmece.bel.tr",
     address: "Büyükçekmece Belediyesi, İstanbul, Türkiye",
   },
 
-  // Sosyal medya
+
   socialLinks: {
     facebook: "https://tr-tr.facebook.com/Buyukcekmecebld",
     twitter: "https://x.com/BuyukcekmeceBld",
@@ -66,7 +98,6 @@ const siteConfig = {
   },
 
 
-  // Default işlemler
   defaultTexts: {
     partnerName: "İsim yok",
     partnerContact: "Yetkili yok",
@@ -84,7 +115,10 @@ const siteConfig = {
 
   },
 
-  // Tema
+  form: {
+    ctaButton: "https://ulakbel.bcekmece.bel.tr/WebBasvuru/esitisyeri#/",
+  },
+
   theme: {
     colors: {
       primary: "#004aad",
@@ -93,9 +127,114 @@ const siteConfig = {
     },
   },
 
+  aboutData:
+  {
+    what: {
+      id: 1,
+      title: "Eşit İşyeri Nedir?",
+      text: "Büyükçekmece Belediyesi olarak; Toplumsal cinsiyet eşitliği ile ilgili farkındalık yaratmak, kadın girişimcilerin sayısını artırmak, kadınların toplumda çağdaş ve güçlü bireyler olarak yer almalarını sağlamak amacıyla Eşit İşyeri Projesi başlatılmıştır.",
+      image: aboutImage1,
+    },
+    why: {
+      id: 2,
+      title: "Neden Almalıyım?",
+      text: "İşyerinize ait ruhsat ücretlerinde %50 oranında indirim sağlanacaktır. İşyerinize ait ilan ve reklam ücretlerinde %50 oranında indirim sağlanacaktır.",
+      image: aboutImage2,
+    },
+
+    condition: {
+      id: 3,
+      title: "Başvuru Şartları",
+      text: `- İşyerinde çalışanların %50'sinin ya da daha fazlasının kadın olması
+- İşyerinde eşit işi yapan kadın ve erkek çalışanların eşit ücret alması
+- İşyerinde işverenler haricinde en az 2 çalışan olması
+- Kadınlara mahsus hizmet veren iş yerleri bu proje kapsamı dışındadır. Bu işyerlerinin tespiti Eşit İşyeri Komisyonu tarafından değerlendirilecektir.
+- Eşit İşyeri Belgesini alan işyerleri yukarıdaki şartları koruması gerekmektedir. Aksi taktirde Eşit İşyeri Belgesi ve bu proje kapsamında faydalandığı avantajlar Eşit İşyeri Komisyonunca iptal edilecektir.`,
+      image: aboutImage3,
+    },
+
+
+
+
+
+  },
+
+
+  partners: {
+    list: {
+      title: "Diğer İşyerleri",
+      subtitle: "Benzer eşit işyerlerini keşfedin",
+      emptyMessage: "Gösterilecek işyeri bulunamadı",
+      viewAllText: "Tümünü Görüntüle",
+      viewAllLink: "/esit-isyerleri",
+    },
+    detail: {
+      detailPath: "/detay",
+      messages: { partnerNotFound: "Firma bulunamadı...", },
+      sections: {
+        address: {
+          title: "Adres Bilgisi",
+          fields: {
+            acik_adres: "Açık Adres",
+            mahalle: "Mahalle",
+            yol_adi: "Cadde/Sokak",
+          },
+        },
+        map: {
+          title: "Konum Haritası",
+        },
+        contact: {
+          title: "İletişim Bilgileri",
+          fields: {
+            yetkili_kisi: "Yetkili Kişi",
+            telefon: "Telefon",
+            eposta: "E-posta",
+          },
+        },
+        calisma_saati: {
+          title: "Çalışma Saatleri",
+        },
+      },
+    },
+
+  },
+
+  loading: "Yükleniyor...",
+
+
+  servicesData: {
+    top: { id: 1, title: "yüzde 50", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. " },
+    middle: { id: 2, title: "destek", description: "Esse rem ducimus excepturi fuga quos libero voluptate neque." },
+    buttom: { id: 3, title: "eşit işyeri", description: " Ut incidunt, iusto libero, eaque ipsamg" },
+  },
 
 
 };
 
-
 export default siteConfig;
+
+
+
+export const pressData = [
+  { id: 1, title: "Now", video: basindabiz },
+  { id: 2, title: "KRT", video: Krt },
+  { id: 3, title: "Tele1", video: Tele1 },
+  { id: 4, title: "Halk TV", video: HalkTvNisan2023 },
+  { id: 5, title: "TV5", video: Tv5 },
+  { id: 6, title: "Halk TV 2", video: HalkTV },
+  { id: 7, title: "FlashTV", video: FlashTV },
+];
+
+
+export const abaoutPresident = [
+  {
+    id: 1, title: "BAŞKANIN MESAJI",
+    text: "Eşit İşyeri projemizin amacı, şehrimiz genelinde toplumsal cinsiyet eşitliği ile ilgili farkındalık yaratmak, kadın girişimcilerin sayısını arttırmak, kadınların çalışma hayatatında çağdaş ve güçlü bireyler olarak üretimden yönetime kadar her alanda görev almalarını desteklemek ve toplumsal yaşamın her alanında ve işyerlerinde kadın-erkek eşitliğinin sağlanması konusunda önem vermek ve bu dengeyi gözetmektir.",
+    image: president,
+  },
+];
+
+export const logomuz2 = [
+  { id: 1, title: "", image: logomuz },
+  { id: 2, title: "", image: tescil },
+];

@@ -1,114 +1,155 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { MapPin, Phone, Mail, User, Clock } from "lucide-react";
+import PartnersList from "../../pages/partners/PartnersList";
+import StatusMessage from "../../components/status/StatusMessage";
+import PageTitle from "./PageTitle";
+import PageContainer from "./PageContainer";
+import { usePartners } from "../../hooks/UsePartners";
+import PartnerImages from "./PartnerImages";
 
-const PartnerDetailsCard = ({ partner }) => {
+const PartnerDetailsCard = ({ partner, loading, error }) => {
   const location = useLocation();
-  const image = location.state?.image;
+  const image = location.state?.image || partner?.image;
+  const { partners } = usePartners(1, 20);
+  if (!partner) {
+    return (
+      <StatusMessage
+        loading={loading}
+        error={error}
+        data={partner}
+        emptyMessage="Firma bulunamadı..."
+      />
+    );
+  }
+
+  const {
+    isyeri_unvani,
+    acik_adres,
+    mahalle,
+    yol_adi,
+    calisma_saati,
+    harita_kodu,
+    yetkili_kisi,
+    telefon,
+    eposta,
+    faaliyet_turu,
+  } = partner;
 
   return (
-    <div className="max-w-6xl mx-auto p-6 mt-16">
-      {/* Başlık Bölümü */}
-      <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">
-          {partner.isyeri_unvani}
-        </h1>
-        <p className="text-xl text-blue-600 font-medium">{partner.faaliyet_turu}</p>
-      </div>
+    <div className="max-w-6xl mx-auto space-y-8">
+      {/* Header */}
+      <PageTitle
+        title={isyeri_unvani}
+        subtitle={faaliyet_turu}
+      />
 
-      {/* Ana İçerik Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Sol Kolon - Resim ve Konum */}
-        <div className="lg:col-span-1 space-y-6">
-          {image && (
+      {/* Grid Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* Left: Photo + Adres + Harita + Çalışma Saatleri */}
+        <div className="lg:col-span-2 space-y-6">
+
+          {/* Photos */}
+          {partner?.files && (
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={image}
-                alt={partner.isyeri_unvani}
-                className="w-full h-80 object-cover transition-transform duration-300 hover:scale-105"
-              />
+              <PartnerImages files={partner.files} />
             </div>
           )}
-          
-          {/* Konum/Adres Bilgileri - Resmin Hemen Altında */}
+
+
+          {/* Adres Bilgisi */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-b border-gray-200 pb-2">
               <MapPin className="text-blue-600 mr-3" size={28} />
               Adres Bilgisi
             </h2>
-            
-            <div className="space-y-4">
+            <p className="text-sm text-gray-500">Açık Adres</p>
+            <p className="text-lg font-medium text-gray-800">{acik_adres}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               <div>
-                <p className="text-sm text-gray-500">Açık Adres</p>
-                <p className="text-lg font-medium text-gray-800">{partner.acik_adres}</p>
+                <p className="text-sm text-gray-500">Mahalle</p>
+                <p className="text-lg font-medium text-gray-800">{mahalle}</p>
               </div>
-              
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <p className="text-sm text-gray-500">Mahalle</p>
-                  <p className="text-lg font-medium text-gray-800">{partner.mahalle}</p>
-                </div>
-                
-                <div>
-                  <p className="text-sm text-gray-500">Cadde/Sokak</p>
-                  <p className="text-lg font-medium text-gray-800">{partner.yol_adi}</p>
-                </div>
+              <div>
+                <p className="text-sm text-gray-500">Cadde/Sokak</p>
+                <p className="text-lg font-medium text-gray-800">{yol_adi}</p>
               </div>
             </div>
           </div>
 
-          {/* Çalışma Saatleri - Mobil için */}
-          <div className="lg:hidden">
-            {partner.calisma_saati && (
-              <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="text-blue-600 mr-3" size={24} />
-                  <h2 className="text-xl font-semibold text-gray-800">Çalışma Saatleri</h2>
-                </div>
-                <p className="text-gray-700">{partner.calisma_saati}</p>
+          {/* Çalışma Saatleri (Mobil) */}
+          {calisma_saati && (
+            <div className="lg:hidden p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-md">
+              <div className="flex items-center mb-2">
+                <Clock className="text-blue-600 mr-3" size={24} />
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Çalışma Saatleri
+                </h2>
               </div>
-            )}
-          </div>
+              <p className="text-gray-700">{calisma_saati}</p>
+            </div>
+          )}
+
+          {/* Map */}
+          {harita_kodu && (
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-b border-gray-200 pb-2">
+                <MapPin className="text-blue-600 mr-3" size={28} />
+                Konum Haritası
+              </h2>
+              <div className="rounded-xl overflow-hidden shadow-md">
+                <div
+                  className="w-full h-80"
+                  dangerouslySetInnerHTML={{ __html: harita_kodu }}
+                />
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Sağ Kolon - İletişim ve Diğer Bilgiler */}
+        {/* Right: İletişim + Çalışma Saatleri (Desktop) + Diğer Şirketler */}
         <div className="lg:col-span-2 space-y-6">
-          {/* İletişim Kartı */}
+          {/* İletişim Bilgileri */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-b border-gray-200 pb-2">
               <User className="text-blue-600 mr-3" size={28} />
               İletişim Bilgileri
             </h2>
-            
             <div className="space-y-4">
-              <div className="flex items-start">
-                <User className="text-gray-500 mt-1 mr-4 flex-shrink-0" size={20} />
+              <div className="flex items-start gap-3">
+                <User className="text-gray-500 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="text-sm text-gray-500">Yetkili Kişi</p>
-                  <p className="text-lg font-medium text-gray-800">{partner.yetkili_kisi}</p>
+                  <p className="text-lg font-medium text-gray-800">
+                    {yetkili_kisi}
+                  </p>
                 </div>
               </div>
-              
-              <div className="flex items-start">
-                <Phone className="text-gray-500 mt-1 mr-4 flex-shrink-0" size={20} />
+              <div className="flex items-start gap-3">
+                <Phone className="text-gray-500 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="text-sm text-gray-500">Telefon</p>
                   <p className="text-lg font-medium text-gray-800">
-                    <a href={`tel:${partner.telefon}`} className="hover:text-blue-600 transition-colors">
-                      {partner.telefon}
+                    <a href={`tel:${telefon}`} className="hover:text-blue-600">
+                      {telefon}
                     </a>
                   </p>
                 </div>
               </div>
-              
-              {partner.eposta && (
-                <div className="flex items-start">
-                  <Mail className="text-gray-500 mt-1 mr-4 flex-shrink-0" size={20} />
+              {eposta && (
+                <div className="flex items-start gap-3">
+                  <Mail
+                    className="text-gray-500 mt-1 flex-shrink-0"
+                    size={20}
+                  />
                   <div>
                     <p className="text-sm text-gray-500">E-posta</p>
                     <p className="text-lg font-medium text-gray-800">
-                      <a href={`mailto:${partner.eposta}`} className="hover:text-blue-600 transition-colors">
-                        {partner.eposta}
+                      <a
+                        href={`mailto:${eposta}`}
+                        className="hover:text-blue-600"
+                      >
+                        {eposta}
                       </a>
                     </p>
                   </div>
@@ -117,34 +158,23 @@ const PartnerDetailsCard = ({ partner }) => {
             </div>
           </div>
 
-          {/* Çalışma Saatleri - Masaüstü için */}
-          <div className="hidden lg:block">
-            {partner.calisma_saati && (
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="text-blue-600 mr-3" size={24} />
-                  <h2 className="text-xl font-semibold text-gray-800">Çalışma Saatleri</h2>
-                </div>
-                <p className="text-gray-700 text-lg">{partner.calisma_saati}</p>
+          {/* Çalışma Saatleri (Desktop) */}
+          {calisma_saati && (
+            <div className="hidden lg:block p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-md">
+              <div className="flex items-center mb-2">
+                <Clock className="text-blue-600 mr-3" size={24} />
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Çalışma Saatleri
+                </h2>
               </div>
-            )}
-          </div>
-
-          {/* Harita Bölümü - Sağ Kolonun Alt Kısmında */}
-          {partner.harita_kodu && (
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
-                <MapPin className="text-blue-600 mr-3" size={28} />
-                Konum Haritası
-              </h2>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <div 
-                  dangerouslySetInnerHTML={{ __html: partner.harita_kodu }} 
-                  className="w-full h-80"
-                />
-              </div>
+              <p className="text-gray-700">{calisma_saati}</p>
             </div>
           )}
+
+          {/* Partners */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+            <PartnersList partners={partners} />
+          </div>
         </div>
       </div>
     </div>

@@ -39,7 +39,6 @@ export const getPartners = async (page = 1, limit = 5) => {
  * @returns {Object|null} Partner objesi veya null
  */
 
-
 export const getPartner = async (id) => {
   try {
     const response = await api.get(`/partners/${id}`);

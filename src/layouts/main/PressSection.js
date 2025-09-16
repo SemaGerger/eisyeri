@@ -71,7 +71,7 @@ const PressSection = () => {
       <video
         ref={videoRef}
         src={src}
-        className="absolute w-full h-48 object-cover top-0 left-0 rounded-lg pointer-events-none"
+        className="absolute w-full h-full object-cover top-0 left-0 rounded-lg pointer-events-none"
         muted
         autoPlay
         playsInline
@@ -132,21 +132,21 @@ const PressSection = () => {
   };
 
 
-  const PressCard = ({ name, image, video, extraInfo, onClick, className = "" }) => {
+  const PressCard = ({ name, image, video, onClick, className = "" }) => {
     return (
       <div
-        className={`bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1 duration-300 ${className}`}
+        className={`bg-white shadow-md rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transition transform hover:-translate-y-1 duration-300 flex flex-col h-full ${className}`}
         onClick={onClick}
       >
         {video ? (
-          <div className="relative">
+          <div className="relative ">
             <video
               src={video}
               className="w-full h-48 object-cover"
               muted
               playsInline
             />
-            {/* Play ikon */}
+            {/* Play ikon 
             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
               <div className="bg-black bg-opacity-50 rounded-full p-3">
                 <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -157,7 +157,7 @@ const PressSection = () => {
                   />
                 </svg>
               </div>
-            </div>
+            </div>*/}
             {/* MiniPreviewVideo */}
             <MiniPreviewVideo src={video} previewTime={5000} />
           </div>
@@ -180,16 +180,21 @@ const PressSection = () => {
     );
   };
 
-  // Kart grupları
+  // Card Groups
   const firstThree = pressData.slice(0, 3);
   const nextFour = pressData.slice(3, 7);
 
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50" ref={sectionRef}>
-      <SectionTitle>Basında Biz</SectionTitle>
+    <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-2 bg-gray-50" ref={sectionRef}>
+      <SectionTitle
+  title="Basında Biz"
+  subtitle="Basında Eşit İşyeri ile ilgili çıkan haberler"
       
+      />
+      
+      {/* Video container */}
       <div className="max-w-7xl w-full">
-        {/* İlk 3  */}
+        {/* 3  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {firstThree.map((item) => (
             <PressCard
@@ -203,7 +208,7 @@ const PressSection = () => {
           ))}
         </div>
 
-        {/* Sonraki 4 kart - 2x2 grid */}
+        {/* 4  */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {nextFour.map((item) => (
             <PressCard

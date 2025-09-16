@@ -40,6 +40,14 @@ export const partnersData = [
   { id: 14, title: "C şirketi", image: foto6 },
 ];
 
+
+
+
+
+
+
+
+
 export const servicesData = [
   { id: 1, title: "yüzde 50", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. " },
   { id: 2, title: "destek", description: "Esse rem ducimus excepturi fuga quos libero voluptate neque." },
@@ -58,16 +66,19 @@ export const pressData = [
 
 export const aboutData = [
   {
+    id: "1",
     title: "Eşit İşyeri Nedir?",
     text: "Büyükçekmece Belediyesi olarak; Toplumsal cinsiyet eşitliği ile ilgili farkındalık yaratmak, kadın girişimcilerin sayısını artırmak, kadınların toplumda çağdaş ve güçlü bireyler olarak yer almalarını sağlamak amacıyla Eşit İşyeri Projesi başlatılmıştır.",
     image: Image1,
   },
   {
+    id: "2",
     title: "Neden Almalıyım?",
     text: "İşyerinize ait ruhsat ücretlerinde %50 oranında indirim sağlanacaktır. İşyerinize ait ilan ve reklam ücretlerinde %50 oranında indirim sağlanacaktır.",
     image: Image2,
   },
   {
+    id: "3",
     title: "Başvuru Şartları",
     text: `- İşyerinde çalışanların %50'sinin ya da daha fazlasının kadın olması
 - İşyerinde eşit işi yapan kadın ve erkek çalışanların eşit ücret alması
