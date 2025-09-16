@@ -84,8 +84,8 @@ const siteConfig = {
   },
 
   contact: {
-    phone: "+90 212 123 45 67",
-    email: "info@bcekmece.bel.tr",
+    phone: "444 0 340",
+    email: "danisma@bcekmece.bel.tr",
     address: "Büyükçekmece Belediyesi, İstanbul, Türkiye",
   },
 
