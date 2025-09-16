@@ -49,7 +49,7 @@ const Contact = () => {
                 <MapPin className="text-blue-600 mt-1 mr-4 flex-shrink-0" size={24} />
                 <div>
                   <h3 className="font-semibold text-gray-800">Adres</h3>
-                  <p className="text-gray-700">Büyükçekmece Belediyesi, İstanbul, Türkiye</p>
+                  <p className="text-gray-700">Fatih Mahallesi Şehremini Sokak. No:1 A Blok Zemin Kat Büyükçekmece/İstanbul</p>
                 </div>
               </div>
               
@@ -58,8 +58,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800">Telefon</h3>
                   <p className="text-gray-700">
-                    <a href="tel:+902121234567" className="hover:text-blue-600 transition-colors">
-                      +90 212 123 45 67
+                    <a href="tel:4440340" className="hover:text-blue-600 transition-colors">
+                      444 0 340
                     </a>
                   </p>
                 </div>
@@ -70,8 +70,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800">E-posta</h3>
                   <p className="text-gray-700">
-                    <a href="mailto:info@buyukcekmece.bel.tr" className="hover:text-blue-600 transition-colors">
-                      info@buyukcekmece.bel.tr
+                    <a href="mailto:danisma@bcekmece.bel.tr" className="hover:text-blue-600 transition-colors">
+                      danisma@bcekmece.bel.tr
                     </a>
                   </p>
                 </div>

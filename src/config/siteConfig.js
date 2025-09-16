@@ -86,7 +86,7 @@ const siteConfig = {
   contact: {
     phone: "444 0 340",
     email: "danisma@bcekmece.bel.tr",
-    address: "Büyükçekmece Belediyesi, İstanbul, Türkiye",
+    address: "Fatih Mahallesi Şehremini Sokak. No:1 A Blok Zemin Kat Büyükçekmece/İstanbul",
   },
 
 
