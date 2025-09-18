@@ -42,8 +42,8 @@ const PartnersList = ({ partners }) => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {partners.slice(0, 4).map((partner, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-5">
+        {partners.slice(0, 3).map((partner, index) => (
           <PartnerListCard key={partner.id || `partner-${index}`} partner={partner} />
         ))}
       </div>
