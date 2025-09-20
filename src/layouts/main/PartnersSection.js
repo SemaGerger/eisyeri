@@ -6,8 +6,6 @@ import StatusMessage from "../../components/status/StatusMessage";
 
 const PartnersSection = () => {
   const { partners, loading, error } = usePartners(1, 10);
-
-  // Veri durumunu kontrol et
   const hasPartners = partners && partners.length > 0;
   const showContent = !loading && !error && hasPartners;
 
@@ -21,8 +19,9 @@ const PartnersSection = () => {
       <StatusMessage
         loading={loading}
         error={error}
-        data={hasPartners ? partners : null} // data null ise emptyMessage gösterir
+        data={hasPartners ? partners : null}
         emptyMessage="Firmalar bulunamadı..."
+        
       />
 
       {showContent && <StoryCardContainer partners={partners} />}

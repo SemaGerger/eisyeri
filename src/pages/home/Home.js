@@ -7,7 +7,7 @@ import Main from "../../layouts/main/Main";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout >
    
         <Hero />
         <Main />  

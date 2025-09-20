@@ -8,7 +8,9 @@ export const usePartners = (page = 1, limit = 5) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true); 
+      setLoading(true);
+      setError(null);
+      
       try {
         const partnersDataApi = await getPartners(page, limit);
 
@@ -19,7 +21,8 @@ export const usePartners = (page = 1, limit = 5) => {
         }
       } catch (err) {
         console.error("Partner verisi çekilemedi:", err);
-        setPartners([]); 
+        setError(err);
+        setPartners([]);
       } finally {
         setLoading(false);
       }

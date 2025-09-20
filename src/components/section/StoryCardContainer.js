@@ -14,7 +14,6 @@ const StoryCardContainer = ({ partners }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [totalVisibleItems, setTotalVisibleItems] = useState(0);
 
-  // Görünür öğe sayısını ve mevcut indeksi hesapla
   const updateScrollIndicator = () => {
     if (containerRef.current && partners.length > 0) {
       const container = containerRef.current;
@@ -30,7 +29,6 @@ const StoryCardContainer = ({ partners }) => {
     }
   };
 
-  // Scroll pozisyonunu kontrol et
   const checkScrollPosition = () => {
     if (containerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
@@ -42,7 +40,6 @@ const StoryCardContainer = ({ partners }) => {
     }
   };
 
-  // Scroll event listener
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
@@ -58,7 +55,6 @@ const StoryCardContainer = ({ partners }) => {
     };
   }, [partners]);
 
-  // Drag events
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
@@ -81,7 +77,6 @@ const StoryCardContainer = ({ partners }) => {
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // Ok butonları için scroll
   const scrollLeftHandler = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -94,7 +89,6 @@ const StoryCardContainer = ({ partners }) => {
     }
   };
 
-  // index scrool
   const scrollToIndex = (index) => {
     if (containerRef.current && partners.length > 0) {
       const container = containerRef.current;
@@ -114,7 +108,6 @@ const StoryCardContainer = ({ partners }) => {
     );
   }
 
-  // Nokta sayısını hesapla
   const dotCount = partners.length > 0 && totalVisibleItems > 0 
     ? Math.ceil(partners.length / totalVisibleItems) 
     : 0;
@@ -143,7 +136,6 @@ const StoryCardContainer = ({ partners }) => {
         </button>
       )}
 
-      {/* Scroll container */}
       <div
         ref={containerRef}
         className="flex overflow-x-auto hide-scrollbar py-4 px-2 cursor-grab active:cursor-grabbing"
@@ -196,7 +188,7 @@ const StoryCardContainer = ({ partners }) => {
         })}
       </div>
 
-      {/* Dot indicator. */}
+
       {dotCount > 1 && (
         <div className="flex justify-center mt-4 space-x-2">
           {Array.from({ length: dotCount }).map((_, index) => (
